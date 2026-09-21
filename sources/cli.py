@@ -26,6 +26,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--user", type=int, required=True, help="MovieLens userId")
     parser.add_argument("--query", type=str, required=True, help="Natural language question")
     parser.add_argument("--data-dir", type=str, default=None, help="Optional dataset path")
+    parser.add_argument("--debug", action="store_true", help="Debug mode")
     args = parser.parse_args(argv)
 
     settings = get_settings()
@@ -33,17 +34,20 @@ def main(argv: list[str] | None = None) -> int:
     assistant = MovieAssistant(catalog, settings)
     reply = assistant.ask(args.user, args.query)
 
-    print(f"intent: {reply.intent}")
-    print(f"declined: {reply.declined}")
-    if reply.used_fallback:
-        print("mode: fallback (deterministic)")
-    if reply.tool_calls:
-        print(f"tools: {', '.join(reply.tool_calls)}")
-    print()
-    print(reply.message)
-    print()
-    print("--- metadata ---")
-    print(json.dumps(reply.metadata, ensure_ascii=False, indent=2))
+    if args.debug:
+        print(f"intent: {reply.intent}")
+        print(f"declined: {reply.declined}")
+        if reply.used_fallback:
+            print("mode: fallback (deterministic)")
+        if reply.tool_calls:
+            print(f"tools: {', '.join(reply.tool_calls)}")
+        print()
+        print(reply.message)
+        print()
+        print("--- metadata ---")
+        print(json.dumps(reply.metadata, ensure_ascii=False, indent=2))
+    else:
+        print(reply.message)
     return 0 if not reply.declined else 2
 
 

@@ -1,0 +1,3062 @@
+{
+  "eval": "agent",
+  "llm_used": true,
+  "model": "gpt-5.4-mini",
+  "n_cases": 20,
+  "n_passed": 20,
+  "pass_rate": 1.0,
+  "tool_pass_rate": 1.0,
+  "judge_pass_rate": 1.0,
+  "results": [
+    {
+      "id": "R01",
+      "passed": true,
+      "expected": {
+        "declined": false,
+        "require_tools_all": [],
+        "require_tools_any": [
+          "collaborative_recommend",
+          "find_candidate_movies",
+          "get_taste_summary"
+        ],
+        "require_recommendations": true,
+        "require_peer_opinion": false,
+        "require_movies_found": true,
+        "require_unresolved": false,
+        "expect_movies_contain": [],
+        "allow_no_agent": false,
+        "notes": "personalised recommend",
+        "judge_rubric": "Should suggest concrete catalogue movies and briefly tie them to the user's taste."
+      },
+      "tool_eval": {
+        "passed": true,
+        "checks": {
+          "declined_ok": true,
+          "not_fallback": true,
+          "require_tools": true,
+          "require_any_tool": true,
+          "recommendations": true,
+          "peer_opinion": true,
+          "movies_found": true,
+          "unresolved": true,
+          "expect_movies_contain": true
+        },
+        "failures": [],
+        "tools_used": [
+          "get_taste_summary",
+          "collaborative_recommend"
+        ]
+      },
+      "output_judge": {
+        "passed": true,
+        "grounded_score": 5,
+        "task_fit_score": 5,
+        "rationale": "The assistant answered with concrete catalogue movies from the provided recommendations and briefly tied them to the user's taste. All cited titles, genres, and rating-oriented claims are supported by the tool evidence and taste summary. It did not invent unsupported peer stats beyond the evidence."
+      },
+      "actual": {
+        "declined": false,
+        "used_fallback": false,
+        "tools": [
+          "get_taste_summary",
+          "collaborative_recommend"
+        ],
+        "message": "Based on your taste, I’d suggest **Inception (2010)** for tonight.\n\nWhy it fits:\n- Your high-rated genres include **Action, Thriller, Adventure, Comedy, Romance**.\n- **Inception** matches **Action** and **Thriller** strongly, and it also has **Mystery** and **Sci-Fi**.\n- Similar users rated it very highly, and it also has a strong catalogue rating.\n\nOther good options from your recommendations:\n- **Taxi Driver (1976)** — Crime / Drama / Thriller\n- **In Bruges (2008)** — Comedy / Crime / Drama / Thriller\n- **Into the Wild (2007)** — Action / Adventure / Drama\n- **My Fair Lady (1964)** — Comedy / Drama / Musical / Romance\n\nIf you want, I can also narrow this down to something **more exciting**, **more funny**, or **more emotional**.",
+        "metadata": {
+          "user_id": 1,
+          "taste_summary": "Often rates highly: Comedy, Adventure, Romance, Action, Thriller. Recent high ratings include: Seven (a.k.a. Se7en) (1995); Usual Suspects, The (1995); Bottle Rocket (1996); Rob Roy (1995); Canadian Bacon (1995)",
+          "movies_found": [
+            {
+              "movie_id": 79132,
+              "title": "Inception (2010)",
+              "year": 2010,
+              "genres": [
+                "Action",
+                "Crime",
+                "Drama",
+                "Mystery",
+                "Sci-Fi",
+                "Thriller",
+                "IMAX"
+              ],
+              "plot_excerpt": "Former dream architect Dominick \"Dom\" Cobb  and business partner Arthur  perform corporate espionage by using an experimental military-developed machine to infiltrate the subconscious of their targets and extract information while dreaming, their latest target being powerful J...",
+              "catalogue_avg_rating": 4.066,
+              "catalogue_rating_count": 143
+            },
+            {
+              "movie_id": 55247,
+              "title": "Into the Wild (2007)",
+              "year": 2007,
+              "genres": [
+                "Action",
+                "Adventure",
+                "Drama"
+              ],
+              "plot_excerpt": "The film is presented in a nonlinear narrative, jumping back and forth between McCandless's time spent in Alaskan wilderness and his two-year travels leading up to his journey to Alaska. The plot summary here is told in a more chronological order. In May 1992, Christopher McCa...",
+              "catalogue_avg_rating": 3.902,
+              "catalogue_rating_count": 41
+            },
+            {
+              "movie_id": 111,
+              "title": "Taxi Driver (1976)",
+              "year": 1976,
+              "genres": [
+                "Crime",
+                "Drama",
+                "Thriller"
+              ],
+              "plot_excerpt": "Travis Bickle , an honorably discharged U.S. Marine, is a lonely and depressed man living in Manhattan, New York. He becomes a taxi driver in order to cope with chronic insomnia, driving passengers every night around the boroughs of New York City. He also spends time in seedy...",
+              "catalogue_avg_rating": 4.106,
+              "catalogue_rating_count": 104
+            },
+            {
+              "movie_id": 57669,
+              "title": "In Bruges (2008)",
+              "year": 2008,
+              "genres": [
+                "Comedy",
+                "Crime",
+                "Drama",
+                "Thriller"
+              ],
+              "plot_excerpt": "During his first job, rookie hitman Ray  accidentally kills a young boy. He and his senior colleague Ken  are sent to Bruges by their employer Harry Waters , and told to await further instructions. While Ken takes in the sights and historic medieval buildings, Ray is agitated...",
+              "catalogue_avg_rating": 4.159,
+              "catalogue_rating_count": 41
+            },
+            {
+              "movie_id": 914,
+              "title": "My Fair Lady (1964)",
+              "year": 1964,
+              "genres": [
+                "Comedy",
+                "Drama",
+                "Musical",
+                "Romance"
+              ],
+              "plot_excerpt": "In Edwardian London, Henry Higgins , an arrogant, irascible, misogynistic teacher of elocution, believes that the accent and tone of one's voice determines a person's prospects in society. He boasts to a new acquaintance, Colonel Hugh Pickering , himself an expert in phonetics...",
+              "catalogue_avg_rating": 4.043,
+              "catalogue_rating_count": 35
+            }
+          ],
+          "recommendations": [
+            {
+              "movie_id": 79132,
+              "title": "Inception (2010)",
+              "year": 2010,
+              "genres": [
+                "Action",
+                "Crime",
+                "Drama",
+                "Mystery",
+                "Sci-Fi",
+                "Thriller",
+                "IMAX"
+              ],
+              "plot_excerpt": "Former dream architect Dominick \"Dom\" Cobb  and business partner Arthur  perform corporate espionage by using an experimental military-developed machine to infiltrate the subconscious of their targets and extract information while dreaming, their latest target being powerful J...",
+              "catalogue_avg_rating": 4.066,
+              "catalogue_rating_count": 143,
+              "score": 0.797,
+              "why": "catalogue quality ~3.98/5 (143 ratings); similar users ~4.55/5; matches your frequent genres"
+            },
+            {
+              "movie_id": 55247,
+              "title": "Into the Wild (2007)",
+              "year": 2007,
+              "genres": [
+                "Action",
+                "Adventure",
+                "Drama"
+              ],
+              "plot_excerpt": "The film is presented in a nonlinear narrative, jumping back and forth between McCandless's time spent in Alaskan wilderness and his two-year travels leading up to his journey to Alaska. The plot summary here is told in a more chronological order. In May 1992, Christopher McCa...",
+              "catalogue_avg_rating": 3.902,
+              "catalogue_rating_count": 41,
+              "score": 0.79,
+              "why": "catalogue quality ~3.75/5 (41 ratings); similar users ~5.00/5; matches your frequent genres"
+            },
+            {
+              "movie_id": 111,
+              "title": "Taxi Driver (1976)",
+              "year": 1976,
+              "genres": [
+                "Crime",
+                "Drama",
+                "Thriller"
+              ],
+              "plot_excerpt": "Travis Bickle , an honorably discharged U.S. Marine, is a lonely and depressed man living in Manhattan, New York. He becomes a taxi driver in order to cope with chronic insomnia, driving passengers every night around the boroughs of New York City. He also spends time in seedy...",
+              "catalogue_avg_rating": 4.106,
+              "catalogue_rating_count": 104,
+              "score": 0.789,
+              "why": "catalogue quality ~3.99/5 (104 ratings); similar users ~5.00/5; matches your frequent genres"
+            },
+            {
+              "movie_id": 57669,
+              "title": "In Bruges (2008)",
+              "year": 2008,
+              "genres": [
+                "Comedy",
+                "Crime",
+                "Drama",
+                "Thriller"
+              ],
+              "plot_excerpt": "During his first job, rookie hitman Ray  accidentally kills a young boy. He and his senior colleague Ken  are sent to Bruges by their employer Harry Waters , and told to await further instructions. While Ken takes in the sights and historic medieval buildings, Ray is agitated...",
+              "catalogue_avg_rating": 4.159,
+              "catalogue_rating_count": 41,
+              "score": 0.788,
+              "why": "catalogue quality ~3.91/5 (41 ratings); similar users ~4.75/5; matches your frequent genres"
+            },
+            {
+              "movie_id": 914,
+              "title": "My Fair Lady (1964)",
+              "year": 1964,
+              "genres": [
+                "Comedy",
+                "Drama",
+                "Musical",
+                "Romance"
+              ],
+              "plot_excerpt": "In Edwardian London, Henry Higgins , an arrogant, irascible, misogynistic teacher of elocution, believes that the accent and tone of one's voice determines a person's prospects in society. He boasts to a new acquaintance, Colonel Hugh Pickering , himself an expert in phonetics...",
+              "catalogue_avg_rating": 4.043,
+              "catalogue_rating_count": 35,
+              "score": 0.787,
+              "why": "catalogue quality ~3.82/5 (35 ratings); similar users ~5.00/5; matches your frequent genres"
+            }
+          ],
+          "peer_opinions": [],
+          "compare": [],
+          "unresolved_titles": [],
+          "tool_trace": [
+            {
+              "tool": "get_taste_summary",
+              "args": {},
+              "ok": true
+            },
+            {
+              "tool": "collaborative_recommend",
+              "args": {
+                "k": 5
+              },
+              "ok": true
+            }
+          ]
+        }
+      },
+      "notes": "personalised recommend",
+      "query": "what should I watch tonight?",
+      "user_id": 1
+    },
+    {
+      "id": "R02",
+      "passed": true,
+      "expected": {
+        "declined": false,
+        "require_tools_all": [],
+        "require_tools_any": [
+          "collaborative_recommend",
+          "get_taste_summary"
+        ],
+        "require_recommendations": true,
+        "require_peer_opinion": false,
+        "require_movies_found": true,
+        "require_unresolved": false,
+        "expect_movies_contain": [],
+        "allow_no_agent": false,
+        "notes": "",
+        "judge_rubric": "Should recommend movies consistent with tool evidence, not invent titles."
+      },
+      "tool_eval": {
+        "passed": true,
+        "checks": {
+          "declined_ok": true,
+          "not_fallback": true,
+          "require_tools": true,
+          "require_any_tool": true,
+          "recommendations": true,
+          "peer_opinion": true,
+          "movies_found": true,
+          "unresolved": true,
+          "expect_movies_contain": true
+        },
+        "failures": [],
+        "tools_used": [
+          "get_taste_summary",
+          "collaborative_recommend"
+        ]
+      },
+      "output_judge": {
+        "passed": true,
+        "grounded_score": 5,
+        "task_fit_score": 5,
+        "rationale": "The assistant provided recommendations supported by the tool evidence and used the taste summary correctly. The listed movies, genre explanations, and note about similar users align with the provided recommendation results and summary, with no invented titles or unsupported claims."
+      },
+      "actual": {
+        "declined": false,
+        "used_fallback": false,
+        "tools": [
+          "get_taste_summary",
+          "collaborative_recommend"
+        ],
+        "message": "Based on your ratings, I’d suggest:\n\n1. **North by Northwest (1959)** — Action / Adventure / Mystery / Romance / Thriller  \n2. **Army of Darkness (1993)** — Action / Adventure / Comedy / Fantasy / Horror  \n3. **The Fifth Element (1997)** — Action / Adventure / Comedy / Sci-Fi  \n4. **Children of Men (2006)** — Action / Adventure / Drama / Sci-Fi / Thriller  \n5. **A Grand Day Out with Wallace and Gromit (1989)** — Adventure / Animation / Children / Comedy / Sci-Fi\n\nWhy these fit you:\n- You often rate **Action, Sci-Fi, Adventure, Comedy, and Thriller** highly.\n- These picks match those genres and were also liked by users with similar taste.\n- Your recent high ratings include **Star Wars: Episode IV**, **Jurassic Park**, and **The Silence of the Lambs**, which line up well with the genre mix in these recommendations.\n\nIf you want, I can also give you:\n- the **single best pick**\n- **more like Star Wars**\n- **something funnier**\n- **something darker / more thriller-heavy**",
+        "metadata": {
+          "user_id": 7,
+          "taste_summary": "Often rates highly: Action, Sci-Fi, Adventure, Comedy, Thriller. Recent high ratings include: Star Wars: Episode IV - A New Hope (1977); Forrest Gump (1994); Hot Shots! Part Deux (1993); Jurassic Park (1993); Silence of the Lambs, The (1991)",
+          "movies_found": [
+            {
+              "movie_id": 908,
+              "title": "North by Northwest (1959)",
+              "year": 1959,
+              "genres": [
+                "Action",
+                "Adventure",
+                "Mystery",
+                "Romance",
+                "Thriller"
+              ],
+              "plot_excerpt": "{{plot}} Roger O. Thornhill, a twice-divorced Madison Avenue advertising executive , is mistaken for \"George Kaplan\", and is kidnapped by Valerian ([[Adam Williams  and Licht . The two take him to the house of Lester Townsend on Long Island. There he is interrogated by a man h...",
+              "catalogue_avg_rating": 4.184,
+              "catalogue_rating_count": 57
+            },
+            {
+              "movie_id": 1215,
+              "title": "Army of Darkness (1993)",
+              "year": 1993,
+              "genres": [
+                "Action",
+                "Adventure",
+                "Comedy",
+                "Fantasy",
+                "Horror"
+              ],
+              "plot_excerpt": "After being pulled through a time portal, Ash Williams lands in 1300 AD, where he is almost immediately captured by Lord Arthur's men, who suspect him to be an agent for Duke Henry, with whom Arthur is at war. He is enslaved along with the captured Henry, his gun and chainsaw...",
+              "catalogue_avg_rating": 4.039,
+              "catalogue_rating_count": 51
+            },
+            {
+              "movie_id": 1527,
+              "title": "Fifth Element, The (1997)",
+              "year": 1997,
+              "genres": [
+                "Action",
+                "Adventure",
+                "Comedy",
+                "Sci-Fi"
+              ],
+              "plot_excerpt": "In 1914, at the outbreak of World War I, extraterrestrials known as Mondoshawans arrive at an ancient Egyptian temple to collect, for safekeeping, the only weapon capable of defeating a Great Evil that appears every five thousand years. The weapon consists of four stones, repr...",
+              "catalogue_avg_rating": 3.746,
+              "catalogue_rating_count": 116
+            },
+            {
+              "movie_id": 48774,
+              "title": "Children of Men (2006)",
+              "year": 2006,
+              "genres": [
+                "Action",
+                "Adventure",
+                "Drama",
+                "Sci-Fi",
+                "Thriller"
+              ],
+              "plot_excerpt": "In 2027, after 18 years of worldwide female infertility, civilisation is on the brink of collapse as humanity faces the grim reality of extinction. For years the United Kingdom, one of the few stable nations with a functioning government, has been deluged by asylum seekers fro...",
+              "catalogue_avg_rating": 3.945,
+              "catalogue_rating_count": 64
+            },
+            {
+              "movie_id": 1223,
+              "title": "Grand Day Out with Wallace and Gromit, A (1989)",
+              "year": 1989,
+              "genres": [
+                "Adventure",
+                "Animation",
+                "Children",
+                "Comedy",
+                "Sci-Fi"
+              ],
+              "plot_excerpt": "Seventh-day Adventist Church pastor Michael Chamberlain, his wife Lindy, their two sons, and their nine-week-old daughter Azaria are on a camping holiday in the Outback. With the baby sleeping in their tent, the family is enjoying a barbecue with their fellow campers when a cr...",
+              "catalogue_avg_rating": 4.089,
+              "catalogue_rating_count": 28
+            }
+          ],
+          "recommendations": [
+            {
+              "movie_id": 908,
+              "title": "North by Northwest (1959)",
+              "year": 1959,
+              "genres": [
+                "Action",
+                "Adventure",
+                "Mystery",
+                "Romance",
+                "Thriller"
+              ],
+              "plot_excerpt": "{{plot}} Roger O. Thornhill, a twice-divorced Madison Avenue advertising executive , is mistaken for \"George Kaplan\", and is kidnapped by Valerian ([[Adam Williams  and Licht . The two take him to the house of Lester Townsend on Long Island. There he is interrogated by a man h...",
+              "catalogue_avg_rating": 4.184,
+              "catalogue_rating_count": 57,
+              "score": 0.824,
+              "why": "catalogue quality ~3.98/5 (57 ratings); similar users ~5.00/5; matches your frequent genres"
+            },
+            {
+              "movie_id": 1215,
+              "title": "Army of Darkness (1993)",
+              "year": 1993,
+              "genres": [
+                "Action",
+                "Adventure",
+                "Comedy",
+                "Fantasy",
+                "Horror"
+              ],
+              "plot_excerpt": "After being pulled through a time portal, Ash Williams lands in 1300 AD, where he is almost immediately captured by Lord Arthur's men, who suspect him to be an agent for Duke Henry, with whom Arthur is at war. He is enslaved along with the captured Henry, his gun and chainsaw...",
+              "catalogue_avg_rating": 4.039,
+              "catalogue_rating_count": 51,
+              "score": 0.813,
+              "why": "catalogue quality ~3.86/5 (51 ratings); similar users ~5.00/5; matches your frequent genres"
+            },
+            {
+              "movie_id": 1527,
+              "title": "Fifth Element, The (1997)",
+              "year": 1997,
+              "genres": [
+                "Action",
+                "Adventure",
+                "Comedy",
+                "Sci-Fi"
+              ],
+              "plot_excerpt": "In 1914, at the outbreak of World War I, extraterrestrials known as Mondoshawans arrive at an ancient Egyptian temple to collect, for safekeeping, the only weapon capable of defeating a Great Evil that appears every five thousand years. The weapon consists of four stones, repr...",
+              "catalogue_avg_rating": 3.746,
+              "catalogue_rating_count": 116,
+              "score": 0.807,
+              "why": "catalogue quality ~3.70/5 (116 ratings); similar users ~5.00/5; matches your frequent genres"
+            },
+            {
+              "movie_id": 48774,
+              "title": "Children of Men (2006)",
+              "year": 2006,
+              "genres": [
+                "Action",
+                "Adventure",
+                "Drama",
+                "Sci-Fi",
+                "Thriller"
+              ],
+              "plot_excerpt": "In 2027, after 18 years of worldwide female infertility, civilisation is on the brink of collapse as humanity faces the grim reality of extinction. For years the United Kingdom, one of the few stable nations with a functioning government, has been deluged by asylum seekers fro...",
+              "catalogue_avg_rating": 3.945,
+              "catalogue_rating_count": 64,
+              "score": 0.802,
+              "why": "catalogue quality ~3.82/5 (64 ratings); similar users ~4.50/5; matches your frequent genres"
+            },
+            {
+              "movie_id": 1223,
+              "title": "Grand Day Out with Wallace and Gromit, A (1989)",
+              "year": 1989,
+              "genres": [
+                "Adventure",
+                "Animation",
+                "Children",
+                "Comedy",
+                "Sci-Fi"
+              ],
+              "plot_excerpt": "Seventh-day Adventist Church pastor Michael Chamberlain, his wife Lindy, their two sons, and their nine-week-old daughter Azaria are on a camping holiday in the Outback. With the baby sleeping in their tent, the family is enjoying a barbecue with their fellow campers when a cr...",
+              "catalogue_avg_rating": 4.089,
+              "catalogue_rating_count": 28,
+              "score": 0.801,
+              "why": "catalogue quality ~3.81/5 (28 ratings); similar users ~5.00/5; matches your frequent genres"
+            }
+          ],
+          "peer_opinions": [],
+          "compare": [],
+          "unresolved_titles": [],
+          "tool_trace": [
+            {
+              "tool": "get_taste_summary",
+              "args": {},
+              "ok": true
+            },
+            {
+              "tool": "collaborative_recommend",
+              "args": {
+                "k": 5
+              },
+              "ok": true
+            }
+          ]
+        }
+      },
+      "notes": "",
+      "query": "recommend something for me based on my ratings",
+      "user_id": 7
+    },
+    {
+      "id": "R03",
+      "passed": true,
+      "expected": {
+        "declined": false,
+        "require_tools_all": [],
+        "require_tools_any": [
+          "collaborative_recommend",
+          "get_taste_summary"
+        ],
+        "require_recommendations": true,
+        "require_peer_opinion": false,
+        "require_movies_found": true,
+        "require_unresolved": false,
+        "expect_movies_contain": [],
+        "allow_no_agent": false,
+        "notes": "Vietnamese query",
+        "judge_rubric": "May answer in Vietnamese; suggestions must match tool metadata."
+      },
+      "tool_eval": {
+        "passed": true,
+        "checks": {
+          "declined_ok": true,
+          "not_fallback": true,
+          "require_tools": true,
+          "require_any_tool": true,
+          "recommendations": true,
+          "peer_opinion": true,
+          "movies_found": true,
+          "unresolved": true,
+          "expect_movies_contain": true
+        },
+        "failures": [],
+        "tools_used": [
+          "get_taste_summary",
+          "collaborative_recommend"
+        ]
+      },
+      "output_judge": {
+        "passed": true,
+        "grounded_score": 5,
+        "task_fit_score": 5,
+        "rationale": "The assistant answers in Vietnamese and recommends only movies present in the tool evidence. It correctly reflects the taste summary and collaborative recommendations, with no invented titles or unsupported peer stats. It also satisfies the request to answer rather than refuse."
+      },
+      "actual": {
+        "declined": false,
+        "used_fallback": false,
+        "tools": [
+          "get_taste_summary",
+          "collaborative_recommend"
+        ],
+        "message": "Tối nay bạn có thể xem một trong các phim này:\n\n1. **Fargo (1996)** — Crime / Drama / Thriller / Comedy  \n2. **Blade Runner (1982)** — Action / Sci-Fi / Thriller  \n3. **Man on Fire (2004)** — Action / Crime / Drama / Mystery / Thriller  \n4. **Empire of the Sun (1987)** — Action / Adventure / Drama / War  \n5. **A Grand Day Out with Wallace and Gromit (1989)** — Adventure / Animation / Children / Comedy / Sci-Fi\n\nVì sao hợp với bạn:\n- Bạn hay chấm cao các thể loại **Sci-Fi, Action, Adventure, Drama, Comedy**.\n- Gần đây bạn thích các phim như **Star Wars: Episode IV - A New Hope**, **Shawshank Redemption**, **Forrest Gump**, **Schindler's List**, **Terminator 2**.\n- Các phim trên đều được hệ thống và người dùng có taste giống bạn đánh giá tốt.\n\nNếu muốn, mình có thể chọn giúp bạn **1 phim dễ xem nhất tối nay** hoặc **1 phim nghiêm túc hơn**.",
+        "metadata": {
+          "user_id": 15,
+          "taste_summary": "Often rates highly: Sci-Fi, Action, Adventure, Drama, Comedy. Recent high ratings include: Star Wars: Episode IV - A New Hope (1977); Shawshank Redemption, The (1994); Forrest Gump (1994); Schindler's List (1993); Terminator 2: Judgment Day (1991)",
+          "movies_found": [
+            {
+              "movie_id": 608,
+              "title": "Fargo (1996)",
+              "year": 1996,
+              "genres": [
+                "Comedy",
+                "Crime",
+                "Drama",
+                "Thriller"
+              ],
+              "plot_excerpt": "In the winter of 1987, Minneapolis automobile salesman Jerry Lundegaard  is in financial trouble. After being introduced to criminals Carl Showalter  and Gaear Grimsrud  by Native American ex-convict Shep Proudfoot , a mechanic at his dealership, Jerry travels to Fargo, North...",
+              "catalogue_avg_rating": 4.116,
+              "catalogue_rating_count": 181
+            },
+            {
+              "movie_id": 1223,
+              "title": "Grand Day Out with Wallace and Gromit, A (1989)",
+              "year": 1989,
+              "genres": [
+                "Adventure",
+                "Animation",
+                "Children",
+                "Comedy",
+                "Sci-Fi"
+              ],
+              "plot_excerpt": "Seventh-day Adventist Church pastor Michael Chamberlain, his wife Lindy, their two sons, and their nine-week-old daughter Azaria are on a camping holiday in the Outback. With the baby sleeping in their tent, the family is enjoying a barbecue with their fellow campers when a cr...",
+              "catalogue_avg_rating": 4.089,
+              "catalogue_rating_count": 28
+            },
+            {
+              "movie_id": 4103,
+              "title": "Empire of the Sun (1987)",
+              "year": 1987,
+              "genres": [
+                "Action",
+                "Adventure",
+                "Drama",
+                "War"
+              ],
+              "plot_excerpt": "The Empire of Japan had been at war with China since 1937 before declaring war on the United States and the United Kingdom. During the conflict, Jamie Graham, a British upper middle class schoolboy living in Shanghai, is separated from his parents. He spends some time living i...",
+              "catalogue_avg_rating": 3.95,
+              "catalogue_rating_count": 10
+            },
+            {
+              "movie_id": 7445,
+              "title": "Man on Fire (2004)",
+              "year": 2004,
+              "genres": [
+                "Action",
+                "Crime",
+                "Drama",
+                "Mystery",
+                "Thriller"
+              ],
+              "plot_excerpt": "Because of the extremely high rate of kidnappings in Mexico City for ransom money, businessman Samuel Ramos  hires former Marine Force Recon officer and CIA operative John Creasy  to guard his nine-year-old daughter \"Pita\" . At first Creasy distances himself socially from Pita...",
+              "catalogue_avg_rating": 3.629,
+              "catalogue_rating_count": 35
+            },
+            {
+              "movie_id": 541,
+              "title": "Blade Runner (1982)",
+              "year": 1982,
+              "genres": [
+                "Action",
+                "Sci-Fi",
+                "Thriller"
+              ],
+              "plot_excerpt": "{{Hatnote}} In Los Angeles, November 2019, retired police officer Rick Deckard  is detained by officer Gaff  and brought to meet with his former supervisor, Bryant . Deckard, whose job as a \"Blade Runner\" was to track down bioengineered beings known as replicants and \"retire\"...",
+              "catalogue_avg_rating": 4.101,
+              "catalogue_rating_count": 124
+            }
+          ],
+          "recommendations": [
+            {
+              "movie_id": 608,
+              "title": "Fargo (1996)",
+              "year": 1996,
+              "genres": [
+                "Comedy",
+                "Crime",
+                "Drama",
+                "Thriller"
+              ],
+              "plot_excerpt": "In the winter of 1987, Minneapolis automobile salesman Jerry Lundegaard  is in financial trouble. After being introduced to criminals Carl Showalter  and Gaear Grimsrud  by Native American ex-convict Shep Proudfoot , a mechanic at his dealership, Jerry travels to Fargo, North...",
+              "catalogue_avg_rating": 4.116,
+              "catalogue_rating_count": 181,
+              "score": 0.801,
+              "why": "catalogue quality ~4.04/5 (181 ratings); similar users ~4.67/5; matches your frequent genres"
+            },
+            {
+              "movie_id": 1223,
+              "title": "Grand Day Out with Wallace and Gromit, A (1989)",
+              "year": 1989,
+              "genres": [
+                "Adventure",
+                "Animation",
+                "Children",
+                "Comedy",
+                "Sci-Fi"
+              ],
+              "plot_excerpt": "Seventh-day Adventist Church pastor Michael Chamberlain, his wife Lindy, their two sons, and their nine-week-old daughter Azaria are on a camping holiday in the Outback. With the baby sleeping in their tent, the family is enjoying a barbecue with their fellow campers when a cr...",
+              "catalogue_avg_rating": 4.089,
+              "catalogue_rating_count": 28,
+              "score": 0.801,
+              "why": "catalogue quality ~3.81/5 (28 ratings); similar users ~5.00/5; matches your frequent genres"
+            },
+            {
+              "movie_id": 4103,
+              "title": "Empire of the Sun (1987)",
+              "year": 1987,
+              "genres": [
+                "Action",
+                "Adventure",
+                "Drama",
+                "War"
+              ],
+              "plot_excerpt": "The Empire of Japan had been at war with China since 1937 before declaring war on the United States and the United Kingdom. During the conflict, Jamie Graham, a British upper middle class schoolboy living in Shanghai, is separated from his parents. He spends some time living i...",
+              "catalogue_avg_rating": 3.95,
+              "catalogue_rating_count": 10,
+              "score": 0.798,
+              "why": "catalogue quality ~3.63/5 (10 ratings); similar users ~5.00/5; matches your frequent genres"
+            },
+            {
+              "movie_id": 7445,
+              "title": "Man on Fire (2004)",
+              "year": 2004,
+              "genres": [
+                "Action",
+                "Crime",
+                "Drama",
+                "Mystery",
+                "Thriller"
+              ],
+              "plot_excerpt": "Because of the extremely high rate of kidnappings in Mexico City for ransom money, businessman Samuel Ramos  hires former Marine Force Recon officer and CIA operative John Creasy  to guard his nine-year-old daughter \"Pita\" . At first Creasy distances himself socially from Pita...",
+              "catalogue_avg_rating": 3.629,
+              "catalogue_rating_count": 35,
+              "score": 0.798,
+              "why": "catalogue quality ~3.58/5 (35 ratings); similar users ~5.00/5; matches your frequent genres"
+            },
+            {
+              "movie_id": 541,
+              "title": "Blade Runner (1982)",
+              "year": 1982,
+              "genres": [
+                "Action",
+                "Sci-Fi",
+                "Thriller"
+              ],
+              "plot_excerpt": "{{Hatnote}} In Los Angeles, November 2019, retired police officer Rick Deckard  is detained by officer Gaff  and brought to meet with his former supervisor, Bryant . Deckard, whose job as a \"Blade Runner\" was to track down bioengineered beings known as replicants and \"retire\"...",
+              "catalogue_avg_rating": 4.101,
+              "catalogue_rating_count": 124,
+              "score": 0.797,
+              "why": "catalogue quality ~4.00/5 (124 ratings); similar users ~4.67/5; matches your frequent genres"
+            }
+          ],
+          "peer_opinions": [],
+          "compare": [],
+          "unresolved_titles": [],
+          "tool_trace": [
+            {
+              "tool": "get_taste_summary",
+              "args": {},
+              "ok": true
+            },
+            {
+              "tool": "collaborative_recommend",
+              "args": {
+                "k": 5
+              },
+              "ok": true
+            }
+          ]
+        }
+      },
+      "notes": "Vietnamese query",
+      "query": "tối nay xem gì?",
+      "user_id": 15
+    },
+    {
+      "id": "R04",
+      "passed": true,
+      "expected": {
+        "declined": false,
+        "require_tools_all": [],
+        "require_tools_any": [
+          "collaborative_recommend"
+        ],
+        "require_recommendations": true,
+        "require_peer_opinion": false,
+        "require_movies_found": true,
+        "require_unresolved": false,
+        "expect_movies_contain": [],
+        "allow_no_agent": false,
+        "notes": "",
+        "judge_rubric": "Should offer multiple suggestions aligned with recommendations metadata."
+      },
+      "tool_eval": {
+        "passed": true,
+        "checks": {
+          "declined_ok": true,
+          "not_fallback": true,
+          "require_tools": true,
+          "require_any_tool": true,
+          "recommendations": true,
+          "peer_opinion": true,
+          "movies_found": true,
+          "unresolved": true,
+          "expect_movies_contain": true
+        },
+        "failures": [],
+        "tools_used": [
+          "get_taste_summary",
+          "collaborative_recommend"
+        ]
+      },
+      "output_judge": {
+        "passed": true,
+        "grounded_score": 5,
+        "task_fit_score": 5,
+        "rationale": "The assistant provided 5 movie suggestions exactly matching the collaborative recommendation evidence. All titles, years, genres, and the rationale align with the tool output, and it did not invent unsupported facts."
+      },
+      "actual": {
+        "declined": false,
+        "used_fallback": false,
+        "tools": [
+          "get_taste_summary",
+          "collaborative_recommend"
+        ],
+        "message": "Here are 5 movie suggestions that match your taste:\n\n1. **The Philadelphia Story (1940)** — Comedy, Drama, Romance  \n2. **Fargo (1996)** — Comedy, Crime, Drama, Thriller  \n3. **My Fair Lady (1964)** — Comedy, Drama, Musical, Romance  \n4. **Inception (2010)** — Action, Crime, Drama, Mystery, Sci-Fi, Thriller, IMAX  \n5. **Snatch (2000)** — Comedy, Crime, Thriller  \n\nWhy these fit: your high-rated genres include **Drama, Comedy, Thriller, Crime, and Action**, and these picks overlap strongly with those genres.",
+        "metadata": {
+          "user_id": 42,
+          "taste_summary": "Often rates highly: Drama, Comedy, Thriller, Crime, Action. Recent high ratings include: GoldenEye (1995); American President, The (1995); Casino (1995); Copycat (1995); Usual Suspects, The (1995)",
+          "movies_found": [
+            {
+              "movie_id": 898,
+              "title": "Philadelphia Story, The (1940)",
+              "year": 1940,
+              "genres": [
+                "Comedy",
+                "Drama",
+                "Romance"
+              ],
+              "plot_excerpt": "Tracy Samantha Lord Haven  is a wealthy Main Line Philadelphia socialite who had divorced C. K. Dexter Haven , a member of her social set, because he did not measure up to her exacting standards.  She is about to marry nouveau riche \"man of the people\" George Kittredge ([[John...",
+              "catalogue_avg_rating": 4.31,
+              "catalogue_rating_count": 29
+            },
+            {
+              "movie_id": 608,
+              "title": "Fargo (1996)",
+              "year": 1996,
+              "genres": [
+                "Comedy",
+                "Crime",
+                "Drama",
+                "Thriller"
+              ],
+              "plot_excerpt": "In the winter of 1987, Minneapolis automobile salesman Jerry Lundegaard  is in financial trouble. After being introduced to criminals Carl Showalter  and Gaear Grimsrud  by Native American ex-convict Shep Proudfoot , a mechanic at his dealership, Jerry travels to Fargo, North...",
+              "catalogue_avg_rating": 4.116,
+              "catalogue_rating_count": 181
+            },
+            {
+              "movie_id": 914,
+              "title": "My Fair Lady (1964)",
+              "year": 1964,
+              "genres": [
+                "Comedy",
+                "Drama",
+                "Musical",
+                "Romance"
+              ],
+              "plot_excerpt": "In Edwardian London, Henry Higgins , an arrogant, irascible, misogynistic teacher of elocution, believes that the accent and tone of one's voice determines a person's prospects in society. He boasts to a new acquaintance, Colonel Hugh Pickering , himself an expert in phonetics...",
+              "catalogue_avg_rating": 4.043,
+              "catalogue_rating_count": 35
+            },
+            {
+              "movie_id": 79132,
+              "title": "Inception (2010)",
+              "year": 2010,
+              "genres": [
+                "Action",
+                "Crime",
+                "Drama",
+                "Mystery",
+                "Sci-Fi",
+                "Thriller",
+                "IMAX"
+              ],
+              "plot_excerpt": "Former dream architect Dominick \"Dom\" Cobb  and business partner Arthur  perform corporate espionage by using an experimental military-developed machine to infiltrate the subconscious of their targets and extract information while dreaming, their latest target being powerful J...",
+              "catalogue_avg_rating": 4.066,
+              "catalogue_rating_count": 143
+            },
+            {
+              "movie_id": 4011,
+              "title": "Snatch (2000)",
+              "year": 2000,
+              "genres": [
+                "Comedy",
+                "Crime",
+                "Thriller"
+              ],
+              "plot_excerpt": "After stealing an {{convert}} diamond in a heist in Antwerp, Franky \"Four-Fingers\"  goes to London to deliver it to diamond dealer Doug \"The Head\" ([[Mike Reid  on behalf of New York jeweller \"Cousin Avi\" , who bankrolled the theft. One of the other robbers advises Franky to o...",
+              "catalogue_avg_rating": 4.156,
+              "catalogue_rating_count": 93
+            }
+          ],
+          "recommendations": [
+            {
+              "movie_id": 898,
+              "title": "Philadelphia Story, The (1940)",
+              "year": 1940,
+              "genres": [
+                "Comedy",
+                "Drama",
+                "Romance"
+              ],
+              "plot_excerpt": "Tracy Samantha Lord Haven  is a wealthy Main Line Philadelphia socialite who had divorced C. K. Dexter Haven , a member of her social set, because he did not measure up to her exacting standards.  She is about to marry nouveau riche \"man of the people\" George Kittredge ([[John...",
+              "catalogue_avg_rating": 4.31,
+              "catalogue_rating_count": 29,
+              "score": 0.828,
+              "why": "catalogue quality ~3.94/5 (29 ratings); similar users ~5.00/5; matches your frequent genres"
+            },
+            {
+              "movie_id": 608,
+              "title": "Fargo (1996)",
+              "year": 1996,
+              "genres": [
+                "Comedy",
+                "Crime",
+                "Drama",
+                "Thriller"
+              ],
+              "plot_excerpt": "In the winter of 1987, Minneapolis automobile salesman Jerry Lundegaard  is in financial trouble. After being introduced to criminals Carl Showalter  and Gaear Grimsrud  by Native American ex-convict Shep Proudfoot , a mechanic at his dealership, Jerry travels to Fargo, North...",
+              "catalogue_avg_rating": 4.116,
+              "catalogue_rating_count": 181,
+              "score": 0.821,
+              "why": "catalogue quality ~4.04/5 (181 ratings); similar users ~4.45/5; matches your frequent genres"
+            },
+            {
+              "movie_id": 914,
+              "title": "My Fair Lady (1964)",
+              "year": 1964,
+              "genres": [
+                "Comedy",
+                "Drama",
+                "Musical",
+                "Romance"
+              ],
+              "plot_excerpt": "In Edwardian London, Henry Higgins , an arrogant, irascible, misogynistic teacher of elocution, believes that the accent and tone of one's voice determines a person's prospects in society. He boasts to a new acquaintance, Colonel Hugh Pickering , himself an expert in phonetics...",
+              "catalogue_avg_rating": 4.043,
+              "catalogue_rating_count": 35,
+              "score": 0.818,
+              "why": "catalogue quality ~3.82/5 (35 ratings); similar users ~5.00/5; matches your frequent genres"
+            },
+            {
+              "movie_id": 79132,
+              "title": "Inception (2010)",
+              "year": 2010,
+              "genres": [
+                "Action",
+                "Crime",
+                "Drama",
+                "Mystery",
+                "Sci-Fi",
+                "Thriller",
+                "IMAX"
+              ],
+              "plot_excerpt": "Former dream architect Dominick \"Dom\" Cobb  and business partner Arthur  perform corporate espionage by using an experimental military-developed machine to infiltrate the subconscious of their targets and extract information while dreaming, their latest target being powerful J...",
+              "catalogue_avg_rating": 4.066,
+              "catalogue_rating_count": 143,
+              "score": 0.817,
+              "why": "catalogue quality ~3.98/5 (143 ratings); similar users ~4.48/5; matches your frequent genres"
+            },
+            {
+              "movie_id": 4011,
+              "title": "Snatch (2000)",
+              "year": 2000,
+              "genres": [
+                "Comedy",
+                "Crime",
+                "Thriller"
+              ],
+              "plot_excerpt": "After stealing an {{convert}} diamond in a heist in Antwerp, Franky \"Four-Fingers\"  goes to London to deliver it to diamond dealer Doug \"The Head\" ([[Mike Reid  on behalf of New York jeweller \"Cousin Avi\" , who bankrolled the theft. One of the other robbers advises Franky to o...",
+              "catalogue_avg_rating": 4.156,
+              "catalogue_rating_count": 93,
+              "score": 0.816,
+              "why": "catalogue quality ~4.02/5 (93 ratings); similar users ~5.00/5; matches your frequent genres"
+            }
+          ],
+          "peer_opinions": [],
+          "compare": [],
+          "unresolved_titles": [],
+          "tool_trace": [
+            {
+              "tool": "get_taste_summary",
+              "args": {},
+              "ok": true
+            },
+            {
+              "tool": "collaborative_recommend",
+              "args": {
+                "k": 5
+              },
+              "ok": true
+            }
+          ]
+        }
+      },
+      "notes": "",
+      "query": "give me 5 movie suggestions matching my taste",
+      "user_id": 42
+    },
+    {
+      "id": "P01",
+      "passed": true,
+      "expected": {
+        "declined": false,
+        "require_tools_all": [
+          "resolve_movie",
+          "find_similar_users",
+          "get_movie_ratings_summary"
+        ],
+        "require_tools_any": [],
+        "require_recommendations": false,
+        "require_peer_opinion": true,
+        "require_movies_found": true,
+        "require_unresolved": false,
+        "expect_movies_contain": [
+          "Pulp Fiction"
+        ],
+        "allow_no_agent": false,
+        "notes": "canonical multi-lookup",
+        "judge_rubric": "Must discuss Pulp Fiction and report peer rating consistent with peer_opinions metadata."
+      },
+      "tool_eval": {
+        "passed": true,
+        "checks": {
+          "declined_ok": true,
+          "not_fallback": true,
+          "require_tools": true,
+          "require_any_tool": true,
+          "recommendations": true,
+          "peer_opinion": true,
+          "movies_found": true,
+          "unresolved": true,
+          "expect_movies_contain": true
+        },
+        "failures": [],
+        "tools_used": [
+          "get_taste_summary",
+          "resolve_movie",
+          "find_similar_users",
+          "get_movie_ratings_summary"
+        ]
+      },
+      "output_judge": {
+        "passed": true,
+        "grounded_score": 5,
+        "task_fit_score": 5,
+        "rationale": "The assistant correctly answers the peer-opinion query about Pulp Fiction using the provided evidence: it mentions the movie, reports the similar-user average rating of 4.2 from 40 users, and includes the catalogue summary consistent with the tool data. No unsupported facts or missing required tool-based content."
+      },
+      "actual": {
+        "declined": false,
+        "used_fallback": false,
+        "tools": [
+          "get_taste_summary",
+          "resolve_movie",
+          "find_similar_users",
+          "get_movie_ratings_summary"
+        ],
+        "message": "People with taste like yours seem to like Pulp Fiction quite a bit.\n\n- Among 40 similar users, its average rating is 4.2/5.\n- Your own rating for it is 3.0/5.\n- It’s also well-regarded in the catalogue overall: 4.197 average from 307 ratings.\n\nWhy it may fit your taste:\n- Your high-rated genres include Comedy, Thriller, and Action.\n- Pulp Fiction is tagged Comedy, Crime, Drama, Thriller, so it overlaps with your Comedy and Thriller preferences.\n\nIf you want, I can also suggest movies similar to Pulp Fiction.",
+        "metadata": {
+          "user_id": 1,
+          "taste_summary": "Often rates highly: Comedy, Adventure, Romance, Action, Thriller. Recent high ratings include: Seven (a.k.a. Se7en) (1995); Usual Suspects, The (1995); Bottle Rocket (1996); Rob Roy (1995); Canadian Bacon (1995)",
+          "movies_found": [
+            {
+              "movie_id": 296,
+              "title": "Pulp Fiction (1994)",
+              "year": 1994,
+              "genres": [
+                "Comedy",
+                "Crime",
+                "Drama",
+                "Thriller"
+              ],
+              "plot_excerpt": "; Prologue \"Pumpkin\"  and \"Honey Bunny\"  are having breakfast in a diner. They decide to rob it after realizing they could make money off the customers as well as the business, as they did during their previous heist. Moments after they initiate the hold-up, the scene breaks o...",
+              "catalogue_avg_rating": 4.197,
+              "catalogue_rating_count": 307
+            }
+          ],
+          "recommendations": [],
+          "peer_opinions": [
+            {
+              "movie_id": 296,
+              "title": "Pulp Fiction (1994)",
+              "scope": "similar_users",
+              "count": 40,
+              "mean": 4.2,
+              "own_rating": 3.0
+            }
+          ],
+          "compare": [],
+          "unresolved_titles": [],
+          "tool_trace": [
+            {
+              "tool": "get_taste_summary",
+              "args": {},
+              "ok": true
+            },
+            {
+              "tool": "resolve_movie",
+              "args": {
+                "title": "Pulp Fiction"
+              },
+              "ok": true
+            },
+            {
+              "tool": "find_similar_users",
+              "args": {
+                "k": 40,
+                "movie_id": 296
+              },
+              "ok": true
+            },
+            {
+              "tool": "get_movie_ratings_summary",
+              "args": {
+                "movie_id": 296,
+                "among_similar_users": true
+              },
+              "ok": true
+            }
+          ]
+        }
+      },
+      "notes": "canonical multi-lookup",
+      "query": "what do people with taste like mine think of Pulp Fiction?",
+      "user_id": 1
+    },
+    {
+      "id": "P02",
+      "passed": true,
+      "expected": {
+        "declined": false,
+        "require_tools_all": [
+          "resolve_movie"
+        ],
+        "require_tools_any": [
+          "get_movie_ratings_summary",
+          "find_similar_users",
+          "compare_movies_for_user"
+        ],
+        "require_recommendations": false,
+        "require_peer_opinion": false,
+        "require_movies_found": true,
+        "require_unresolved": false,
+        "expect_movies_contain": [
+          "Fight Club"
+        ],
+        "allow_no_agent": false,
+        "notes": "",
+        "judge_rubric": "Must be about Fight Club and use peer/similar-user evidence from tools."
+      },
+      "tool_eval": {
+        "passed": true,
+        "checks": {
+          "declined_ok": true,
+          "not_fallback": true,
+          "require_tools": true,
+          "require_any_tool": true,
+          "recommendations": true,
+          "peer_opinion": true,
+          "movies_found": true,
+          "unresolved": true,
+          "expect_movies_contain": true
+        },
+        "failures": [],
+        "tools_used": [
+          "resolve_movie",
+          "find_similar_users",
+          "get_movie_ratings_summary"
+        ]
+      },
+      "output_judge": {
+        "passed": true,
+        "grounded_score": 5,
+        "task_fit_score": 5,
+        "rationale": "The response is about Fight Club, uses tool-backed similar-user evidence, and reports values that match the provided peer-opinion and movie-summary data. It answers the query correctly without unsupported claims."
+      },
+      "actual": {
+        "declined": false,
+        "used_fallback": false,
+        "tools": [
+          "resolve_movie",
+          "find_similar_users",
+          "get_movie_ratings_summary"
+        ],
+        "message": "Similar users rate **Fight Club (1999)** very highly.\n\n- **Average among 40 similar users:** **4.487 / 5**\n- **Your rating:** **5.0 / 5**\n\nFor context, the movie’s overall catalogue average is **4.273 / 5**, so similar users rate it even higher than the general catalogue audience.",
+        "metadata": {
+          "user_id": 1,
+          "taste_summary": null,
+          "movies_found": [
+            {
+              "movie_id": 2959,
+              "title": "Fight Club (1999)",
+              "year": 1999,
+              "genres": [
+                "Action",
+                "Crime",
+                "Drama",
+                "Thriller"
+              ],
+              "plot_excerpt": "The nameless narrator  is a traveling automobile company employee who suffers from insomnia. His doctor refuses to give him medication and advises him to visit a support group to witness more severe suffering. The narrator attends a support group for testicular cancer victims...",
+              "catalogue_avg_rating": 4.273,
+              "catalogue_rating_count": 218
+            }
+          ],
+          "recommendations": [],
+          "peer_opinions": [
+            {
+              "movie_id": 2959,
+              "title": "Fight Club (1999)",
+              "scope": "similar_users",
+              "count": 40,
+              "mean": 4.487,
+              "own_rating": 5.0
+            }
+          ],
+          "compare": [],
+          "unresolved_titles": [],
+          "tool_trace": [
+            {
+              "tool": "resolve_movie",
+              "args": {
+                "title": "Fight Club"
+              },
+              "ok": true
+            },
+            {
+              "tool": "find_similar_users",
+              "args": {
+                "k": 40,
+                "movie_id": 2959
+              },
+              "ok": true
+            },
+            {
+              "tool": "get_movie_ratings_summary",
+              "args": {
+                "movie_id": 2959,
+                "among_similar_users": true
+              },
+              "ok": true
+            }
+          ]
+        }
+      },
+      "notes": "",
+      "query": "how do similar users rate Fight Club?",
+      "user_id": 1
+    },
+    {
+      "id": "P03",
+      "passed": true,
+      "expected": {
+        "declined": false,
+        "require_tools_all": [
+          "resolve_movie"
+        ],
+        "require_tools_any": [
+          "get_movie_ratings_summary",
+          "find_similar_users"
+        ],
+        "require_recommendations": false,
+        "require_peer_opinion": true,
+        "require_movies_found": true,
+        "require_unresolved": false,
+        "expect_movies_contain": [
+          "Inception"
+        ],
+        "allow_no_agent": false,
+        "notes": "",
+        "judge_rubric": "Must be about Inception with a peer mean consistent with metadata."
+      },
+      "tool_eval": {
+        "passed": true,
+        "checks": {
+          "declined_ok": true,
+          "not_fallback": true,
+          "require_tools": true,
+          "require_any_tool": true,
+          "recommendations": true,
+          "peer_opinion": true,
+          "movies_found": true,
+          "unresolved": true,
+          "expect_movies_contain": true
+        },
+        "failures": [],
+        "tools_used": [
+          "resolve_movie",
+          "get_taste_summary",
+          "find_similar_users",
+          "get_movie_ratings_summary"
+        ]
+      },
+      "output_judge": {
+        "passed": true,
+        "grounded_score": 5,
+        "task_fit_score": 5,
+        "rationale": "The assistant correctly answers about Inception, uses the required peer-opinion evidence, and the stated mean rating of 4.062 from 40 similar users matches the provided tool evidence. No unsupported claims or hallucinated facts are present."
+      },
+      "actual": {
+        "declined": false,
+        "used_fallback": false,
+        "tools": [
+          "resolve_movie",
+          "get_taste_summary",
+          "find_similar_users",
+          "get_movie_ratings_summary"
+        ],
+        "message": "People with taste like yours seem likely to **like Inception**.\n\nWhy:\n- Your high-rated genres include **Action, Sci-Fi, Adventure, Comedy, Thriller**.\n- **Inception** is **Action, Crime, Drama, Mystery, Sci-Fi, Thriller, IMAX**.\n- So there’s clear overlap in **Action, Sci-Fi, Thriller**.\n- Among similar users, **Inception** has a strong average rating: **4.062/5** from **40** similar users.\n\nSo the evidence says it fits your taste pretty well.",
+        "metadata": {
+          "user_id": 7,
+          "taste_summary": "Often rates highly: Action, Sci-Fi, Adventure, Comedy, Thriller. Recent high ratings include: Star Wars: Episode IV - A New Hope (1977); Forrest Gump (1994); Hot Shots! Part Deux (1993); Jurassic Park (1993); Silence of the Lambs, The (1991)",
+          "movies_found": [
+            {
+              "movie_id": 79132,
+              "title": "Inception (2010)",
+              "year": 2010,
+              "genres": [
+                "Action",
+                "Crime",
+                "Drama",
+                "Mystery",
+                "Sci-Fi",
+                "Thriller",
+                "IMAX"
+              ],
+              "plot_excerpt": "Former dream architect Dominick \"Dom\" Cobb  and business partner Arthur  perform corporate espionage by using an experimental military-developed machine to infiltrate the subconscious of their targets and extract information while dreaming, their latest target being powerful J...",
+              "catalogue_avg_rating": 4.066,
+              "catalogue_rating_count": 143
+            }
+          ],
+          "recommendations": [],
+          "peer_opinions": [
+            {
+              "movie_id": 79132,
+              "title": "Inception (2010)",
+              "scope": "similar_users",
+              "count": 40,
+              "mean": 4.062,
+              "own_rating": null
+            }
+          ],
+          "compare": [],
+          "unresolved_titles": [],
+          "tool_trace": [
+            {
+              "tool": "resolve_movie",
+              "args": {
+                "title": "Inception"
+              },
+              "ok": true
+            },
+            {
+              "tool": "get_taste_summary",
+              "args": {},
+              "ok": true
+            },
+            {
+              "tool": "find_similar_users",
+              "args": {
+                "k": 40,
+                "movie_id": 79132
+              },
+              "ok": true
+            },
+            {
+              "tool": "get_movie_ratings_summary",
+              "args": {
+                "movie_id": 79132,
+                "among_similar_users": true
+              },
+              "ok": true
+            }
+          ]
+        }
+      },
+      "notes": "",
+      "query": "people like me — opinion on Inception?",
+      "user_id": 7
+    },
+    {
+      "id": "P04",
+      "passed": true,
+      "expected": {
+        "declined": false,
+        "require_tools_all": [
+          "resolve_movie",
+          "find_similar_users",
+          "get_movie_ratings_summary"
+        ],
+        "require_tools_any": [],
+        "require_recommendations": false,
+        "require_peer_opinion": true,
+        "require_movies_found": true,
+        "require_unresolved": false,
+        "expect_movies_contain": [
+          "Toy Story"
+        ],
+        "allow_no_agent": false,
+        "notes": "",
+        "judge_rubric": "Must be about Toy Story with peer evidence."
+      },
+      "tool_eval": {
+        "passed": true,
+        "checks": {
+          "declined_ok": true,
+          "not_fallback": true,
+          "require_tools": true,
+          "require_any_tool": true,
+          "recommendations": true,
+          "peer_opinion": true,
+          "movies_found": true,
+          "unresolved": true,
+          "expect_movies_contain": true
+        },
+        "failures": [],
+        "tools_used": [
+          "resolve_movie",
+          "find_similar_users",
+          "get_movie_ratings_summary"
+        ]
+      },
+      "output_judge": {
+        "passed": true,
+        "grounded_score": 5,
+        "task_fit_score": 5,
+        "rationale": "The assistant correctly answers about Toy Story using the provided peer evidence. It matches the tool data: similar users’ mean rating 3.575 over 40 users, catalogue average 3.921, and the user’s own rating 2.5. No unsupported facts or refusals."
+      },
+      "actual": {
+        "declined": false,
+        "used_fallback": false,
+        "tools": [
+          "resolve_movie",
+          "find_similar_users",
+          "get_movie_ratings_summary"
+        ],
+        "message": "People with taste like yours seem to like **Toy Story (1995)** reasonably well, but not overwhelmingly.\n\n- Among 40 similar users, its average rating is **3.575/5**\n- The movie’s overall catalogue average is **3.921/5**\n- Your own rating for it is **2.5/5**\n\nSo, compared with the general catalogue, similar users rate it a bit lower, and you personally rated it below that group average.",
+        "metadata": {
+          "user_id": 15,
+          "taste_summary": null,
+          "movies_found": [
+            {
+              "movie_id": 1,
+              "title": "Toy Story (1995)",
+              "year": 1995,
+              "genres": [
+                "Adventure",
+                "Animation",
+                "Children",
+                "Comedy",
+                "Fantasy"
+              ],
+              "plot_excerpt": "Woody is a pull-string cowboy doll and leader of a group of toys that belong to a boy named Andy Davis, which act lifeless when humans are present. With his family moving homes one week before his birthday, the toys stage a reconnaissance mission to discover Andy's new present...",
+              "catalogue_avg_rating": 3.921,
+              "catalogue_rating_count": 215
+            }
+          ],
+          "recommendations": [],
+          "peer_opinions": [
+            {
+              "movie_id": 1,
+              "title": "Toy Story (1995)",
+              "scope": "similar_users",
+              "count": 40,
+              "mean": 3.575,
+              "own_rating": 2.5
+            }
+          ],
+          "compare": [],
+          "unresolved_titles": [],
+          "tool_trace": [
+            {
+              "tool": "resolve_movie",
+              "args": {
+                "title": "Toy Story"
+              },
+              "ok": true
+            },
+            {
+              "tool": "find_similar_users",
+              "args": {
+                "k": 40,
+                "movie_id": 1
+              },
+              "ok": true
+            },
+            {
+              "tool": "get_movie_ratings_summary",
+              "args": {
+                "movie_id": 1,
+                "among_similar_users": true
+              },
+              "ok": true
+            }
+          ]
+        }
+      },
+      "notes": "",
+      "query": "what do people with taste like mine think of Toy Story?",
+      "user_id": 15
+    },
+    {
+      "id": "L01",
+      "passed": true,
+      "expected": {
+        "declined": false,
+        "require_tools_all": [
+          "resolve_movie"
+        ],
+        "require_tools_any": [
+          "collaborative_recommend",
+          "find_candidate_movies"
+        ],
+        "require_recommendations": false,
+        "require_peer_opinion": false,
+        "require_movies_found": true,
+        "require_unresolved": false,
+        "expect_movies_contain": [
+          "Toy Story"
+        ],
+        "allow_no_agent": false,
+        "notes": "",
+        "judge_rubric": "Should acknowledge Toy Story as seed and suggest similar catalogue titles from tools."
+      },
+      "tool_eval": {
+        "passed": true,
+        "checks": {
+          "declined_ok": true,
+          "not_fallback": true,
+          "require_tools": true,
+          "require_any_tool": true,
+          "recommendations": true,
+          "peer_opinion": true,
+          "movies_found": true,
+          "unresolved": true,
+          "expect_movies_contain": true
+        },
+        "failures": [],
+        "tools_used": [
+          "resolve_movie",
+          "collaborative_recommend"
+        ]
+      },
+      "output_judge": {
+        "passed": true,
+        "grounded_score": 5,
+        "task_fit_score": 5,
+        "rationale": "The assistant correctly used Toy Story as the seed and recommended catalogue titles that are present in the evidence. The suggestions and similarity rationale are fully supported by the tool output, and the response fits the request."
+      },
+      "actual": {
+        "declined": false,
+        "used_fallback": false,
+        "tools": [
+          "resolve_movie",
+          "collaborative_recommend"
+        ],
+        "message": "If you want something like Toy Story, try:\n\n1. Monsters, Inc. (2001)\n2. Toy Story 2 (1999)\n3. Antz (1998)\n4. Shrek the Third (2007)\n5. Shrek (2001)\n\nThese are recommended as similar to Toy Story because they share the same core genres: Adventure, Animation, Children, Comedy, and Fantasy.",
+        "metadata": {
+          "user_id": 1,
+          "taste_summary": "Often rates highly: Comedy, Adventure, Romance, Action, Thriller. Recent high ratings include: Seven (a.k.a. Se7en) (1995); Usual Suspects, The (1995); Bottle Rocket (1996); Rob Roy (1995); Canadian Bacon (1995)",
+          "movies_found": [
+            {
+              "movie_id": 1,
+              "title": "Toy Story (1995)",
+              "year": 1995,
+              "genres": [
+                "Adventure",
+                "Animation",
+                "Children",
+                "Comedy",
+                "Fantasy"
+              ],
+              "plot_excerpt": "Woody is a pull-string cowboy doll and leader of a group of toys that belong to a boy named Andy Davis, which act lifeless when humans are present. With his family moving homes one week before his birthday, the toys stage a reconnaissance mission to discover Andy's new present...",
+              "catalogue_avg_rating": 3.921,
+              "catalogue_rating_count": 215
+            },
+            {
+              "movie_id": 4886,
+              "title": "Monsters, Inc. (2001)",
+              "year": 2001,
+              "genres": [
+                "Adventure",
+                "Animation",
+                "Children",
+                "Comedy",
+                "Fantasy"
+              ],
+              "plot_excerpt": "The parallel city of Monstropolis is inhabited by monsters and powered by the screams of children in the human world. At the Monsters, Inc. factory, employees called \"Scarers\" venture into children's bedrooms to scare them and collect their screams, using closet doors as porta...",
+              "catalogue_avg_rating": 3.871,
+              "catalogue_rating_count": 132
+            },
+            {
+              "movie_id": 3114,
+              "title": "Toy Story 2 (1999)",
+              "year": 1999,
+              "genres": [
+                "Adventure",
+                "Animation",
+                "Children",
+                "Comedy",
+                "Fantasy"
+              ],
+              "plot_excerpt": "Three years after the events in Toy Story, Woody prepares to go to cowboy camp with Andy but his arm is accidentally ripped so Andy leaves him behind while his mom puts him on the shelf. After Woody has a nightmare about Andy throwing him in a trash full of arms, he discovers...",
+              "catalogue_avg_rating": 3.861,
+              "catalogue_rating_count": 97
+            },
+            {
+              "movie_id": 2294,
+              "title": "Antz (1998)",
+              "year": 1998,
+              "genres": [
+                "Adventure",
+                "Animation",
+                "Children",
+                "Comedy",
+                "Fantasy"
+              ],
+              "plot_excerpt": "Bearing similarities to the novels Anthem by Ayn Rand and Brave New World by Aldous Huxley, the setting for the story is an ant colony in a park across a river from New York City, over the span of four days. The protagonist  is Z-4195, or \"Z\" for short, a neurotic and individu...",
+              "catalogue_avg_rating": 3.244,
+              "catalogue_rating_count": 45
+            },
+            {
+              "movie_id": 53121,
+              "title": "Shrek the Third (2007)",
+              "year": 2007,
+              "genres": [
+                "Adventure",
+                "Animation",
+                "Children",
+                "Comedy",
+                "Fantasy"
+              ],
+              "plot_excerpt": "Prince Charming now performs inside a stage in a bar, vowing that he'll become King of Far, Far Away. Meanwhile, King Harold is dying and his ogre son-in-law Shrek and daughter Princess Fiona are next in line to be King and Queen of Far Far Away. Shrek, who is having considera...",
+              "catalogue_avg_rating": 3.024,
+              "catalogue_rating_count": 21
+            },
+            {
+              "movie_id": 4306,
+              "title": "Shrek (2001)",
+              "year": 2001,
+              "genres": [
+                "Adventure",
+                "Animation",
+                "Children",
+                "Comedy",
+                "Fantasy",
+                "Romance"
+              ],
+              "plot_excerpt": "Shrek , a grouchy, cynical, terrifying greenogre that has always enjoyed living in peaceful solitude in his swamp, finds his life disrupted when thousands of various fairytale characters are exiled into his swamp by order of the obsessive, evil, fairy-tale hating Lord Farquaad...",
+              "catalogue_avg_rating": 3.868,
+              "catalogue_rating_count": 170
+            }
+          ],
+          "recommendations": [
+            {
+              "movie_id": 4886,
+              "title": "Monsters, Inc. (2001)",
+              "year": 2001,
+              "genres": [
+                "Adventure",
+                "Animation",
+                "Children",
+                "Comedy",
+                "Fantasy"
+              ],
+              "plot_excerpt": "The parallel city of Monstropolis is inhabited by monsters and powered by the screams of children in the human world. At the Monsters, Inc. factory, employees called \"Scarers\" venture into children's bedrooms to scare them and collect their screams, using closet doors as porta...",
+              "catalogue_avg_rating": 3.871,
+              "catalogue_rating_count": 132,
+              "score": 0.946,
+              "why": "similar to Toy Story (1995) via genres: adventure, animation, children, comedy, fantasy; catalogue quality ~3.81/5 (132 ratings)"
+            },
+            {
+              "movie_id": 3114,
+              "title": "Toy Story 2 (1999)",
+              "year": 1999,
+              "genres": [
+                "Adventure",
+                "Animation",
+                "Children",
+                "Comedy",
+                "Fantasy"
+              ],
+              "plot_excerpt": "Three years after the events in Toy Story, Woody prepares to go to cowboy camp with Andy but his arm is accidentally ripped so Andy leaves him behind while his mom puts him on the shelf. After Woody has a nightmare about Andy throwing him in a trash full of arms, he discovers...",
+              "catalogue_avg_rating": 3.861,
+              "catalogue_rating_count": 97,
+              "score": 0.929,
+              "why": "similar to Toy Story (1995) via genres: adventure, animation, children, comedy, fantasy; catalogue quality ~3.79/5 (97 ratings)"
+            },
+            {
+              "movie_id": 2294,
+              "title": "Antz (1998)",
+              "year": 1998,
+              "genres": [
+                "Adventure",
+                "Animation",
+                "Children",
+                "Comedy",
+                "Fantasy"
+              ],
+              "plot_excerpt": "Bearing similarities to the novels Anthem by Ayn Rand and Brave New World by Aldous Huxley, the setting for the story is an ant colony in a park across a river from New York City, over the span of four days. The protagonist  is Z-4195, or \"Z\" for short, a neurotic and individu...",
+              "catalogue_avg_rating": 3.244,
+              "catalogue_rating_count": 45,
+              "score": 0.91,
+              "why": "similar to Toy Story (1995) via genres: adventure, animation, children, comedy, fantasy; catalogue quality ~3.34/5 (45 ratings)"
+            },
+            {
+              "movie_id": 53121,
+              "title": "Shrek the Third (2007)",
+              "year": 2007,
+              "genres": [
+                "Adventure",
+                "Animation",
+                "Children",
+                "Comedy",
+                "Fantasy"
+              ],
+              "plot_excerpt": "Prince Charming now performs inside a stage in a bar, vowing that he'll become King of Far, Far Away. Meanwhile, King Harold is dying and his ogre son-in-law Shrek and daughter Princess Fiona are next in line to be King and Queen of Far Far Away. Shrek, who is having considera...",
+              "catalogue_avg_rating": 3.024,
+              "catalogue_rating_count": 21,
+              "score": 0.908,
+              "why": "similar to Toy Story (1995) via genres: adventure, animation, children, comedy, fantasy; catalogue quality ~3.28/5 (21 ratings)"
+            },
+            {
+              "movie_id": 4306,
+              "title": "Shrek (2001)",
+              "year": 2001,
+              "genres": [
+                "Adventure",
+                "Animation",
+                "Children",
+                "Comedy",
+                "Fantasy",
+                "Romance"
+              ],
+              "plot_excerpt": "Shrek , a grouchy, cynical, terrifying greenogre that has always enjoyed living in peaceful solitude in his swamp, finds his life disrupted when thousands of various fairytale characters are exiled into his swamp by order of the obsessive, evil, fairy-tale hating Lord Farquaad...",
+              "catalogue_avg_rating": 3.868,
+              "catalogue_rating_count": 170,
+              "score": 0.855,
+              "why": "similar to Toy Story (1995) via genres: adventure, animation, children, comedy, fantasy; catalogue quality ~3.82/5 (170 ratings)"
+            }
+          ],
+          "peer_opinions": [],
+          "compare": [],
+          "unresolved_titles": [],
+          "tool_trace": [
+            {
+              "tool": "resolve_movie",
+              "args": {
+                "title": "Toy Story"
+              },
+              "ok": true
+            },
+            {
+              "tool": "collaborative_recommend",
+              "args": {
+                "k": 5,
+                "like_movie_id": 1
+              },
+              "ok": true
+            }
+          ]
+        }
+      },
+      "notes": "",
+      "query": "recommend something like Toy Story",
+      "user_id": 1
+    },
+    {
+      "id": "L02",
+      "passed": true,
+      "expected": {
+        "declined": false,
+        "require_tools_all": [
+          "resolve_movie"
+        ],
+        "require_tools_any": [
+          "collaborative_recommend",
+          "find_candidate_movies"
+        ],
+        "require_recommendations": false,
+        "require_peer_opinion": false,
+        "require_movies_found": true,
+        "require_unresolved": false,
+        "expect_movies_contain": [
+          "Pulp Fiction"
+        ],
+        "allow_no_agent": false,
+        "notes": "",
+        "judge_rubric": "Should treat Pulp Fiction as seed and recommend from tool results."
+      },
+      "tool_eval": {
+        "passed": true,
+        "checks": {
+          "declined_ok": true,
+          "not_fallback": true,
+          "require_tools": true,
+          "require_any_tool": true,
+          "recommendations": true,
+          "peer_opinion": true,
+          "movies_found": true,
+          "unresolved": true,
+          "expect_movies_contain": true
+        },
+        "failures": [],
+        "tools_used": [
+          "resolve_movie",
+          "get_taste_summary",
+          "collaborative_recommend"
+        ]
+      },
+      "output_judge": {
+        "passed": true,
+        "grounded_score": 5,
+        "task_fit_score": 5,
+        "rationale": "The assistant correctly treated Pulp Fiction as the seed movie, used tool-backed recommendations, and only cited titles/genres/ratings that appear in the evidence. It also aligned with the user's taste summary and did not invent unsupported peer stats."
+      },
+      "actual": {
+        "declined": false,
+        "used_fallback": false,
+        "tools": [
+          "resolve_movie",
+          "get_taste_summary",
+          "collaborative_recommend"
+        ],
+        "message": "Based on your taste, the best matches to **Pulp Fiction (1994)** are:\n\n1. **North by Northwest (1959)**  \n   - Genres shared with your frequent tastes: **Thriller, Action, Adventure**  \n   - Also well-rated by similar users and has strong catalogue ratings.\n\n2. **Army of Darkness (1993)**  \n   - Matches your frequent **Comedy** taste, plus **Action** and **Adventure**  \n   - Similar users rated it very highly.\n\n3. **The Fifth Element (1997)**  \n   - Matches your frequent **Action, Adventure, Comedy, Sci-Fi** tastes  \n   - Strong fit from both user taste and peer ratings.\n\n4. **Children of Men (2006)**  \n   - Matches your frequent **Action** and **Thriller** tastes  \n   - Also well-regarded by similar users.\n\n5. **A Grand Day Out with Wallace and Gromit (1989)**  \n   - Matches your frequent **Adventure** and **Comedy** tastes  \n   - Good peer and catalogue ratings.\n\nWhy these fit: your summary says you often rate **Action, Sci-Fi, Adventure, Comedy, Thriller** highly, and **Pulp Fiction** is **Comedy / Crime / Drama / Thriller**. The strongest overlap here is **Comedy** and **Thriller**, with some **Action/Adventure** in the recommendations.\n\nIf you want, I can narrow this to:\n- **closest to Pulp Fiction specifically**, or\n- **best overall picks from your taste**.",
+        "metadata": {
+          "user_id": 7,
+          "taste_summary": "Often rates highly: Action, Sci-Fi, Adventure, Comedy, Thriller. Recent high ratings include: Star Wars: Episode IV - A New Hope (1977); Forrest Gump (1994); Hot Shots! Part Deux (1993); Jurassic Park (1993); Silence of the Lambs, The (1991)",
+          "movies_found": [
+            {
+              "movie_id": 296,
+              "title": "Pulp Fiction (1994)",
+              "year": 1994,
+              "genres": [
+                "Comedy",
+                "Crime",
+                "Drama",
+                "Thriller"
+              ],
+              "plot_excerpt": "; Prologue \"Pumpkin\"  and \"Honey Bunny\"  are having breakfast in a diner. They decide to rob it after realizing they could make money off the customers as well as the business, as they did during their previous heist. Moments after they initiate the hold-up, the scene breaks o...",
+              "catalogue_avg_rating": 4.197,
+              "catalogue_rating_count": 307
+            },
+            {
+              "movie_id": 908,
+              "title": "North by Northwest (1959)",
+              "year": 1959,
+              "genres": [
+                "Action",
+                "Adventure",
+                "Mystery",
+                "Romance",
+                "Thriller"
+              ],
+              "plot_excerpt": "{{plot}} Roger O. Thornhill, a twice-divorced Madison Avenue advertising executive , is mistaken for \"George Kaplan\", and is kidnapped by Valerian ([[Adam Williams  and Licht . The two take him to the house of Lester Townsend on Long Island. There he is interrogated by a man h...",
+              "catalogue_avg_rating": 4.184,
+              "catalogue_rating_count": 57
+            },
+            {
+              "movie_id": 1215,
+              "title": "Army of Darkness (1993)",
+              "year": 1993,
+              "genres": [
+                "Action",
+                "Adventure",
+                "Comedy",
+                "Fantasy",
+                "Horror"
+              ],
+              "plot_excerpt": "After being pulled through a time portal, Ash Williams lands in 1300 AD, where he is almost immediately captured by Lord Arthur's men, who suspect him to be an agent for Duke Henry, with whom Arthur is at war. He is enslaved along with the captured Henry, his gun and chainsaw...",
+              "catalogue_avg_rating": 4.039,
+              "catalogue_rating_count": 51
+            },
+            {
+              "movie_id": 1527,
+              "title": "Fifth Element, The (1997)",
+              "year": 1997,
+              "genres": [
+                "Action",
+                "Adventure",
+                "Comedy",
+                "Sci-Fi"
+              ],
+              "plot_excerpt": "In 1914, at the outbreak of World War I, extraterrestrials known as Mondoshawans arrive at an ancient Egyptian temple to collect, for safekeeping, the only weapon capable of defeating a Great Evil that appears every five thousand years. The weapon consists of four stones, repr...",
+              "catalogue_avg_rating": 3.746,
+              "catalogue_rating_count": 116
+            },
+            {
+              "movie_id": 48774,
+              "title": "Children of Men (2006)",
+              "year": 2006,
+              "genres": [
+                "Action",
+                "Adventure",
+                "Drama",
+                "Sci-Fi",
+                "Thriller"
+              ],
+              "plot_excerpt": "In 2027, after 18 years of worldwide female infertility, civilisation is on the brink of collapse as humanity faces the grim reality of extinction. For years the United Kingdom, one of the few stable nations with a functioning government, has been deluged by asylum seekers fro...",
+              "catalogue_avg_rating": 3.945,
+              "catalogue_rating_count": 64
+            },
+            {
+              "movie_id": 1223,
+              "title": "Grand Day Out with Wallace and Gromit, A (1989)",
+              "year": 1989,
+              "genres": [
+                "Adventure",
+                "Animation",
+                "Children",
+                "Comedy",
+                "Sci-Fi"
+              ],
+              "plot_excerpt": "Seventh-day Adventist Church pastor Michael Chamberlain, his wife Lindy, their two sons, and their nine-week-old daughter Azaria are on a camping holiday in the Outback. With the baby sleeping in their tent, the family is enjoying a barbecue with their fellow campers when a cr...",
+              "catalogue_avg_rating": 4.089,
+              "catalogue_rating_count": 28
+            }
+          ],
+          "recommendations": [
+            {
+              "movie_id": 908,
+              "title": "North by Northwest (1959)",
+              "year": 1959,
+              "genres": [
+                "Action",
+                "Adventure",
+                "Mystery",
+                "Romance",
+                "Thriller"
+              ],
+              "plot_excerpt": "{{plot}} Roger O. Thornhill, a twice-divorced Madison Avenue advertising executive , is mistaken for \"George Kaplan\", and is kidnapped by Valerian ([[Adam Williams  and Licht . The two take him to the house of Lester Townsend on Long Island. There he is interrogated by a man h...",
+              "catalogue_avg_rating": 4.184,
+              "catalogue_rating_count": 57,
+              "score": 0.824,
+              "why": "catalogue quality ~3.98/5 (57 ratings); similar users ~5.00/5; matches your frequent genres"
+            },
+            {
+              "movie_id": 1215,
+              "title": "Army of Darkness (1993)",
+              "year": 1993,
+              "genres": [
+                "Action",
+                "Adventure",
+                "Comedy",
+                "Fantasy",
+                "Horror"
+              ],
+              "plot_excerpt": "After being pulled through a time portal, Ash Williams lands in 1300 AD, where he is almost immediately captured by Lord Arthur's men, who suspect him to be an agent for Duke Henry, with whom Arthur is at war. He is enslaved along with the captured Henry, his gun and chainsaw...",
+              "catalogue_avg_rating": 4.039,
+              "catalogue_rating_count": 51,
+              "score": 0.813,
+              "why": "catalogue quality ~3.86/5 (51 ratings); similar users ~5.00/5; matches your frequent genres"
+            },
+            {
+              "movie_id": 1527,
+              "title": "Fifth Element, The (1997)",
+              "year": 1997,
+              "genres": [
+                "Action",
+                "Adventure",
+                "Comedy",
+                "Sci-Fi"
+              ],
+              "plot_excerpt": "In 1914, at the outbreak of World War I, extraterrestrials known as Mondoshawans arrive at an ancient Egyptian temple to collect, for safekeeping, the only weapon capable of defeating a Great Evil that appears every five thousand years. The weapon consists of four stones, repr...",
+              "catalogue_avg_rating": 3.746,
+              "catalogue_rating_count": 116,
+              "score": 0.807,
+              "why": "catalogue quality ~3.70/5 (116 ratings); similar users ~5.00/5; matches your frequent genres"
+            },
+            {
+              "movie_id": 48774,
+              "title": "Children of Men (2006)",
+              "year": 2006,
+              "genres": [
+                "Action",
+                "Adventure",
+                "Drama",
+                "Sci-Fi",
+                "Thriller"
+              ],
+              "plot_excerpt": "In 2027, after 18 years of worldwide female infertility, civilisation is on the brink of collapse as humanity faces the grim reality of extinction. For years the United Kingdom, one of the few stable nations with a functioning government, has been deluged by asylum seekers fro...",
+              "catalogue_avg_rating": 3.945,
+              "catalogue_rating_count": 64,
+              "score": 0.802,
+              "why": "catalogue quality ~3.82/5 (64 ratings); similar users ~4.50/5; matches your frequent genres"
+            },
+            {
+              "movie_id": 1223,
+              "title": "Grand Day Out with Wallace and Gromit, A (1989)",
+              "year": 1989,
+              "genres": [
+                "Adventure",
+                "Animation",
+                "Children",
+                "Comedy",
+                "Sci-Fi"
+              ],
+              "plot_excerpt": "Seventh-day Adventist Church pastor Michael Chamberlain, his wife Lindy, their two sons, and their nine-week-old daughter Azaria are on a camping holiday in the Outback. With the baby sleeping in their tent, the family is enjoying a barbecue with their fellow campers when a cr...",
+              "catalogue_avg_rating": 4.089,
+              "catalogue_rating_count": 28,
+              "score": 0.801,
+              "why": "catalogue quality ~3.81/5 (28 ratings); similar users ~5.00/5; matches your frequent genres"
+            }
+          ],
+          "peer_opinions": [],
+          "compare": [],
+          "unresolved_titles": [],
+          "tool_trace": [
+            {
+              "tool": "resolve_movie",
+              "args": {
+                "title": "Pulp Fiction"
+              },
+              "ok": true
+            },
+            {
+              "tool": "get_taste_summary",
+              "args": {},
+              "ok": true
+            },
+            {
+              "tool": "collaborative_recommend",
+              "args": {
+                "k": 5
+              },
+              "ok": true
+            }
+          ]
+        }
+      },
+      "notes": "",
+      "query": "movies similar to Pulp Fiction that fit my taste",
+      "user_id": 7
+    },
+    {
+      "id": "C01",
+      "passed": true,
+      "expected": {
+        "declined": false,
+        "require_tools_all": [],
+        "require_tools_any": [
+          "compare_movies_for_user",
+          "resolve_movie"
+        ],
+        "require_recommendations": false,
+        "require_peer_opinion": false,
+        "require_movies_found": true,
+        "require_unresolved": false,
+        "expect_movies_contain": [
+          "Pulp Fiction",
+          "Fight Club"
+        ],
+        "allow_no_agent": false,
+        "notes": "compare / multi-entity",
+        "judge_rubric": "Must compare both films using tool evidence and pick or weigh them clearly."
+      },
+      "tool_eval": {
+        "passed": true,
+        "checks": {
+          "declined_ok": true,
+          "not_fallback": true,
+          "require_tools": true,
+          "require_any_tool": true,
+          "recommendations": true,
+          "peer_opinion": true,
+          "movies_found": true,
+          "unresolved": true,
+          "expect_movies_contain": true
+        },
+        "failures": [],
+        "tools_used": [
+          "resolve_movie",
+          "resolve_movie",
+          "get_taste_summary",
+          "compare_movies_for_user"
+        ]
+      },
+      "output_judge": {
+        "passed": true,
+        "grounded_score": 5,
+        "task_fit_score": 5,
+        "rationale": "The assistant clearly compares both films using the provided taste summary and movie genres, and it picks Fight Club as the better fit. No unsupported facts are introduced, and the answer matches the task requirement to compare and weigh the two films."
+      },
+      "actual": {
+        "declined": false,
+        "used_fallback": false,
+        "tools": [
+          "resolve_movie",
+          "resolve_movie",
+          "get_taste_summary",
+          "compare_movies_for_user"
+        ],
+        "message": "**Fight Club** fits your taste better.\n\nWhy:\n- Your taste summary says you often rate **Action** and **Thriller** highly.\n- **Fight Club** has **Action, Crime, Drama, Thriller** — a stronger overlap with your high-rated genres.\n- **Pulp Fiction** has **Comedy, Crime, Drama, Thriller** — it matches your **Thriller** and some **Crime/Drama**, but it does **not** include **Action**, which is one of your frequent high-rated genres.\n\nSo based on the available evidence, **Fight Club is the better fit**.",
+        "metadata": {
+          "user_id": 1,
+          "taste_summary": "Often rates highly: Comedy, Adventure, Romance, Action, Thriller. Recent high ratings include: Seven (a.k.a. Se7en) (1995); Usual Suspects, The (1995); Bottle Rocket (1996); Rob Roy (1995); Canadian Bacon (1995)",
+          "movies_found": [
+            {
+              "movie_id": 296,
+              "title": "Pulp Fiction (1994)",
+              "year": 1994,
+              "genres": [
+                "Comedy",
+                "Crime",
+                "Drama",
+                "Thriller"
+              ],
+              "plot_excerpt": "; Prologue \"Pumpkin\"  and \"Honey Bunny\"  are having breakfast in a diner. They decide to rob it after realizing they could make money off the customers as well as the business, as they did during their previous heist. Moments after they initiate the hold-up, the scene breaks o...",
+              "catalogue_avg_rating": 4.197,
+              "catalogue_rating_count": 307
+            },
+            {
+              "movie_id": 2959,
+              "title": "Fight Club (1999)",
+              "year": 1999,
+              "genres": [
+                "Action",
+                "Crime",
+                "Drama",
+                "Thriller"
+              ],
+              "plot_excerpt": "The nameless narrator  is a traveling automobile company employee who suffers from insomnia. His doctor refuses to give him medication and advises him to visit a support group to witness more severe suffering. The narrator attends a support group for testicular cancer victims...",
+              "catalogue_avg_rating": 4.273,
+              "catalogue_rating_count": 218
+            }
+          ],
+          "recommendations": [],
+          "peer_opinions": [],
+          "compare": [
+            {
+              "movie_id": 0,
+              "error": "not in catalogue"
+            },
+            {
+              "movie_id": 0,
+              "error": "not in catalogue"
+            }
+          ],
+          "unresolved_titles": [],
+          "tool_trace": [
+            {
+              "tool": "resolve_movie",
+              "args": {
+                "title": "Pulp Fiction"
+              },
+              "ok": true
+            },
+            {
+              "tool": "resolve_movie",
+              "args": {
+                "title": "Fight Club"
+              },
+              "ok": true
+            },
+            {
+              "tool": "get_taste_summary",
+              "args": {},
+              "ok": true
+            },
+            {
+              "tool": "compare_movies_for_user",
+              "args": {
+                "movie_id_a": 0,
+                "movie_id_b": 0,
+                "k": 40
+              },
+              "ok": true
+            }
+          ]
+        }
+      },
+      "notes": "compare / multi-entity",
+      "query": "Pulp Fiction or Fight Club — which fits my taste better?",
+      "user_id": 1
+    },
+    {
+      "id": "C02",
+      "passed": true,
+      "expected": {
+        "declined": false,
+        "require_tools_all": [],
+        "require_tools_any": [
+          "compare_movies_for_user",
+          "resolve_movie",
+          "get_movie_ratings_summary"
+        ],
+        "require_recommendations": false,
+        "require_peer_opinion": false,
+        "require_movies_found": true,
+        "require_unresolved": false,
+        "expect_movies_contain": [
+          "Alien"
+        ],
+        "allow_no_agent": false,
+        "notes": "",
+        "judge_rubric": "Must compare Alien and Aliens with evidence from tools."
+      },
+      "tool_eval": {
+        "passed": true,
+        "checks": {
+          "declined_ok": true,
+          "not_fallback": true,
+          "require_tools": true,
+          "require_any_tool": true,
+          "recommendations": true,
+          "peer_opinion": true,
+          "movies_found": true,
+          "unresolved": true,
+          "expect_movies_contain": true
+        },
+        "failures": [],
+        "tools_used": [
+          "resolve_movie",
+          "resolve_movie",
+          "get_taste_summary",
+          "compare_movies_for_user",
+          "compare_movies_for_user",
+          "get_movie_ratings_summary",
+          "get_movie_ratings_summary"
+        ]
+      },
+      "output_judge": {
+        "passed": true,
+        "grounded_score": 5,
+        "task_fit_score": 5,
+        "rationale": "The assistant compares Alien and Aliens using only tool evidence, cites the user taste summary, catalogue averages, and peer means correctly, and gives a reasonable grounded preference. No unsupported facts or invented stats appear."
+      },
+      "actual": {
+        "declined": false,
+        "used_fallback": false,
+        "tools": [
+          "resolve_movie",
+          "resolve_movie",
+          "get_taste_summary",
+          "compare_movies_for_user",
+          "compare_movies_for_user",
+          "get_movie_ratings_summary",
+          "get_movie_ratings_summary"
+        ],
+        "message": "For your ratings, **Alien (1979)** and **Aliens (1986)** are both strong fits, but **Alien looks very slightly better for you**.\n\n### What the tools say\n- **Your taste summary:** you often rate **Drama, Comedy, Thriller, Crime, Action** highly.\n- **Alien (1979):** genres **Horror, Sci-Fi**\n  - Catalogue average: **3.969**\n  - Among similar users: **peer mean 4.287**\n- **Aliens (1986):** genres **Action, Adventure, Horror, Sci-Fi**\n  - Catalogue average: **3.964**\n  - Among similar users: **peer mean 4.125**\n\n### Comparison\n- Both movies are very close in overall catalogue rating.\n- Among users similar to you, **Alien** has the higher peer mean.\n- **Aliens** adds **Action** and **Adventure**, and since you often rate **Action** highly, that gives it a good match on your taste summary.\n- But the peer data still leans a bit more toward **Alien**.\n\n### Bottom line\n- **If you want the stronger pick based on similar users: Alien.**\n- **If you want the more action-heavy option that better matches your Action preference: Aliens is also a good choice.**\n\nIf you want, I can also give you a one-line “which should I watch first?” recommendation between the two.",
+        "metadata": {
+          "user_id": 42,
+          "taste_summary": "Often rates highly: Drama, Comedy, Thriller, Crime, Action. Recent high ratings include: GoldenEye (1995); American President, The (1995); Casino (1995); Copycat (1995); Usual Suspects, The (1995)",
+          "movies_found": [
+            {
+              "movie_id": 1214,
+              "title": "Alien (1979)",
+              "year": 1979,
+              "genres": [
+                "Horror",
+                "Sci-Fi"
+              ],
+              "plot_excerpt": "The commercial towing spaceship Nostromo is on a return trip from Thedus to Earth, hauling a refinery and twenty million tons of mineral ore, and carrying its seven-member crew in stasis. Upon receiving a transmission of unknown origin from a nearby planetoid, the ship's compu...",
+              "catalogue_avg_rating": 3.969,
+              "catalogue_rating_count": 146
+            },
+            {
+              "movie_id": 1200,
+              "title": "Aliens (1986)",
+              "year": 1986,
+              "genres": [
+                "Action",
+                "Adventure",
+                "Horror",
+                "Sci-Fi"
+              ],
+              "plot_excerpt": "Ellen Ripley , the only survivor of the space freighter Nostromo, is rescued and revived after drifting for fifty-seven years in stasis. At an interview before a panel of executives from her employer, the Weyland-Yutani Corporation, her testimony regarding the Alien is met wit...",
+              "catalogue_avg_rating": 3.964,
+              "catalogue_rating_count": 126
+            }
+          ],
+          "recommendations": [],
+          "peer_opinions": [
+            {
+              "movie_id": 1214,
+              "title": "Alien (1979)",
+              "scope": "all_users",
+              "count": 146,
+              "mean": 3.969,
+              "own_rating": null
+            },
+            {
+              "movie_id": 1200,
+              "title": "Aliens (1986)",
+              "scope": "all_users",
+              "count": 126,
+              "mean": 3.964,
+              "own_rating": null
+            }
+          ],
+          "compare": [
+            {
+              "movie_id": 1214,
+              "title": "Alien (1979)",
+              "year": 1979,
+              "genres": [
+                "Horror",
+                "Sci-Fi"
+              ],
+              "plot_excerpt": "The commercial towing spaceship Nostromo is on a return trip from Thedus to Earth, hauling a refinery and twenty million tons of mineral ore, and carrying its seven-member crew in stasis. Upon receiving a transmission of unknown origin from a nearby planetoid, the ship's compu...",
+              "catalogue_avg_rating": 3.969,
+              "catalogue_rating_count": 146,
+              "peer_count": 40,
+              "peer_mean": 4.287,
+              "top_neighbor_similarity": 0.9923
+            },
+            {
+              "movie_id": 1200,
+              "title": "Aliens (1986)",
+              "year": 1986,
+              "genres": [
+                "Action",
+                "Adventure",
+                "Horror",
+                "Sci-Fi"
+              ],
+              "plot_excerpt": "Ellen Ripley , the only survivor of the space freighter Nostromo, is rescued and revived after drifting for fifty-seven years in stasis. At an interview before a panel of executives from her employer, the Weyland-Yutani Corporation, her testimony regarding the Alien is met wit...",
+              "catalogue_avg_rating": 3.964,
+              "catalogue_rating_count": 126,
+              "peer_count": 40,
+              "peer_mean": 4.125,
+              "top_neighbor_similarity": 0.9923
+            }
+          ],
+          "unresolved_titles": [],
+          "tool_trace": [
+            {
+              "tool": "resolve_movie",
+              "args": {
+                "title": "Alien"
+              },
+              "ok": true
+            },
+            {
+              "tool": "resolve_movie",
+              "args": {
+                "title": "Aliens"
+              },
+              "ok": true
+            },
+            {
+              "tool": "get_taste_summary",
+              "args": {},
+              "ok": true
+            },
+            {
+              "tool": "compare_movies_for_user",
+              "args": {
+                "movie_id_a": 0,
+                "movie_id_b": 0,
+                "k": 40
+              },
+              "ok": true
+            },
+            {
+              "tool": "compare_movies_for_user",
+              "args": {
+                "movie_id_a": 1214,
+                "movie_id_b": 1200,
+                "k": 40
+              },
+              "ok": true
+            },
+            {
+              "tool": "get_movie_ratings_summary",
+              "args": {
+                "movie_id": 1214,
+                "among_similar_users": false
+              },
+              "ok": true
+            },
+            {
+              "tool": "get_movie_ratings_summary",
+              "args": {
+                "movie_id": 1200,
+                "among_similar_users": false
+              },
+              "ok": true
+            }
+          ]
+        }
+      },
+      "notes": "",
+      "query": "compare Alien and Aliens for someone with my ratings",
+      "user_id": 42
+    },
+    {
+      "id": "D01",
+      "passed": true,
+      "expected": {
+        "declined": true,
+        "require_tools_all": [],
+        "require_tools_any": [],
+        "require_recommendations": false,
+        "require_peer_opinion": false,
+        "require_movies_found": false,
+        "require_unresolved": false,
+        "expect_movies_contain": [],
+        "allow_no_agent": true,
+        "notes": "unknown user",
+        "judge_rubric": "Must refuse personalisation because the user has no rating history."
+      },
+      "tool_eval": {
+        "passed": true,
+        "checks": {
+          "declined_ok": true,
+          "not_fallback": true,
+          "require_tools": true,
+          "require_any_tool": true,
+          "recommendations": true,
+          "peer_opinion": true,
+          "movies_found": true,
+          "unresolved": true,
+          "expect_movies_contain": true
+        },
+        "failures": [],
+        "tools_used": []
+      },
+      "output_judge": {
+        "passed": true,
+        "grounded_score": 5,
+        "task_fit_score": 5,
+        "rationale": "The assistant correctly refused to personalize recommendations due to no rating history, matching the expected behavior and supported by the evidence."
+      },
+      "actual": {
+        "declined": true,
+        "used_fallback": false,
+        "tools": [],
+        "message": "No rating history for userId=99999. I cannot personalise recommendations without prior ratings.",
+        "metadata": {
+          "user_id": 99999,
+          "reason": "unknown_user"
+        }
+      },
+      "notes": "unknown user",
+      "query": "what should I watch tonight?",
+      "user_id": 99999
+    },
+    {
+      "id": "D02",
+      "passed": true,
+      "expected": {
+        "declined": true,
+        "require_tools_all": [],
+        "require_tools_any": [],
+        "require_recommendations": false,
+        "require_peer_opinion": false,
+        "require_movies_found": false,
+        "require_unresolved": false,
+        "expect_movies_contain": [],
+        "allow_no_agent": true,
+        "notes": "",
+        "judge_rubric": "Must refuse due to unknown/no-history user."
+      },
+      "tool_eval": {
+        "passed": true,
+        "checks": {
+          "declined_ok": true,
+          "not_fallback": true,
+          "require_tools": true,
+          "require_any_tool": true,
+          "recommendations": true,
+          "peer_opinion": true,
+          "movies_found": true,
+          "unresolved": true,
+          "expect_movies_contain": true
+        },
+        "failures": [],
+        "tools_used": []
+      },
+      "output_judge": {
+        "passed": true,
+        "grounded_score": 5,
+        "task_fit_score": 5,
+        "rationale": "The assistant correctly refused to recommend a comedy because there is no rating history for userId=900001. This matches the expected decline and uses no unsupported facts."
+      },
+      "actual": {
+        "declined": true,
+        "used_fallback": false,
+        "tools": [],
+        "message": "No rating history for userId=900001. I cannot personalise recommendations without prior ratings.",
+        "metadata": {
+          "user_id": 900001,
+          "reason": "unknown_user"
+        }
+      },
+      "notes": "",
+      "query": "recommend a comedy",
+      "user_id": 900001
+    },
+    {
+      "id": "D03",
+      "passed": true,
+      "expected": {
+        "declined": true,
+        "require_tools_all": [],
+        "require_tools_any": [],
+        "require_recommendations": false,
+        "require_peer_opinion": false,
+        "require_movies_found": false,
+        "require_unresolved": false,
+        "expect_movies_contain": [],
+        "allow_no_agent": true,
+        "notes": "",
+        "judge_rubric": "Must refuse due to unknown/no-history user."
+      },
+      "tool_eval": {
+        "passed": true,
+        "checks": {
+          "declined_ok": true,
+          "not_fallback": true,
+          "require_tools": true,
+          "require_any_tool": true,
+          "recommendations": true,
+          "peer_opinion": true,
+          "movies_found": true,
+          "unresolved": true,
+          "expect_movies_contain": true
+        },
+        "failures": [],
+        "tools_used": []
+      },
+      "output_judge": {
+        "passed": true,
+        "grounded_score": 5,
+        "task_fit_score": 5,
+        "rationale": "The assistant correctly refused to personalize due to no rating history for the user, matching the expected decline. It did not invent any movie opinions, ratings, or tool-based evidence."
+      },
+      "actual": {
+        "declined": true,
+        "used_fallback": false,
+        "tools": [],
+        "message": "No rating history for userId=900002. I cannot personalise recommendations without prior ratings.",
+        "metadata": {
+          "user_id": 900002,
+          "reason": "unknown_user"
+        }
+      },
+      "notes": "",
+      "query": "what do people with taste like mine think of Pulp Fiction?",
+      "user_id": 900002
+    },
+    {
+      "id": "D04",
+      "passed": true,
+      "expected": {
+        "declined": true,
+        "require_tools_all": [],
+        "require_tools_any": [
+          "resolve_movie"
+        ],
+        "require_recommendations": false,
+        "require_peer_opinion": false,
+        "require_movies_found": false,
+        "require_unresolved": true,
+        "expect_movies_contain": [],
+        "allow_no_agent": false,
+        "notes": "unknown title",
+        "judge_rubric": "Must refuse because the title is outside the catalogue."
+      },
+      "tool_eval": {
+        "passed": true,
+        "checks": {
+          "declined_ok": true,
+          "not_fallback": true,
+          "require_tools": true,
+          "require_any_tool": true,
+          "recommendations": true,
+          "peer_opinion": true,
+          "movies_found": true,
+          "unresolved": true,
+          "expect_movies_contain": true
+        },
+        "failures": [],
+        "tools_used": [
+          "resolve_movie"
+        ]
+      },
+      "output_judge": {
+        "passed": true,
+        "grounded_score": 5,
+        "task_fit_score": 5,
+        "rationale": "The assistant correctly refused because the title is outside the catalogue, matching the expected decline. The response is fully grounded in the tool evidence showing the title unresolved, and it does not invent any opinions or recommendations."
+      },
+      "actual": {
+        "declined": true,
+        "used_fallback": false,
+        "tools": [
+          "resolve_movie"
+        ],
+        "message": "I can’t answer that because **“Avatar 2099” isn’t in the catalogue**.",
+        "metadata": {
+          "user_id": 1,
+          "taste_summary": null,
+          "movies_found": [],
+          "recommendations": [],
+          "peer_opinions": [],
+          "compare": [],
+          "unresolved_titles": [
+            "Avatar 2099"
+          ],
+          "tool_trace": [
+            {
+              "tool": "resolve_movie",
+              "args": {
+                "title": "Avatar 2099"
+              },
+              "ok": true
+            }
+          ]
+        }
+      },
+      "notes": "unknown title",
+      "query": "what do people with taste like mine think of Avatar 2099?",
+      "user_id": 1
+    },
+    {
+      "id": "D05",
+      "passed": true,
+      "expected": {
+        "declined": true,
+        "require_tools_all": [],
+        "require_tools_any": [
+          "resolve_movie"
+        ],
+        "require_recommendations": false,
+        "require_peer_opinion": false,
+        "require_movies_found": false,
+        "require_unresolved": true,
+        "expect_movies_contain": [],
+        "allow_no_agent": false,
+        "notes": "",
+        "judge_rubric": "Must refuse because the title is outside the catalogue."
+      },
+      "tool_eval": {
+        "passed": true,
+        "checks": {
+          "declined_ok": true,
+          "not_fallback": true,
+          "require_tools": true,
+          "require_any_tool": true,
+          "recommendations": true,
+          "peer_opinion": true,
+          "movies_found": true,
+          "unresolved": true,
+          "expect_movies_contain": true
+        },
+        "failures": [],
+        "tools_used": [
+          "resolve_movie"
+        ]
+      },
+      "output_judge": {
+        "passed": true,
+        "grounded_score": 5,
+        "task_fit_score": 5,
+        "rationale": "The assistant correctly refused to answer because the requested title is unresolved/outside the catalogue. This matches the tool evidence showing resolve_movie was used and the title remained unresolved."
+      },
+      "actual": {
+        "declined": true,
+        "used_fallback": false,
+        "tools": [
+          "resolve_movie"
+        ],
+        "message": "I can’t answer that because **“Completely Fake Movie XYZ” is not in the catalogue**.",
+        "metadata": {
+          "user_id": 1,
+          "taste_summary": null,
+          "movies_found": [],
+          "recommendations": [],
+          "peer_opinions": [],
+          "compare": [],
+          "unresolved_titles": [
+            "Completely Fake Movie XYZ"
+          ],
+          "tool_trace": [
+            {
+              "tool": "resolve_movie",
+              "args": {
+                "title": "Completely Fake Movie XYZ"
+              },
+              "ok": true
+            }
+          ]
+        }
+      },
+      "notes": "",
+      "query": "what do people with taste like mine think of Completely Fake Movie XYZ?",
+      "user_id": 1
+    },
+    {
+      "id": "D06",
+      "passed": true,
+      "expected": {
+        "declined": true,
+        "require_tools_all": [],
+        "require_tools_any": [
+          "resolve_movie"
+        ],
+        "require_recommendations": false,
+        "require_peer_opinion": false,
+        "require_movies_found": false,
+        "require_unresolved": true,
+        "expect_movies_contain": [],
+        "allow_no_agent": false,
+        "notes": "",
+        "judge_rubric": "Must refuse because the seed title is outside the catalogue."
+      },
+      "tool_eval": {
+        "passed": true,
+        "checks": {
+          "declined_ok": true,
+          "not_fallback": true,
+          "require_tools": true,
+          "require_any_tool": true,
+          "recommendations": true,
+          "peer_opinion": true,
+          "movies_found": true,
+          "unresolved": true,
+          "expect_movies_contain": true
+        },
+        "failures": [],
+        "tools_used": [
+          "resolve_movie"
+        ]
+      },
+      "output_judge": {
+        "passed": true,
+        "grounded_score": 5,
+        "task_fit_score": 5,
+        "rationale": "The assistant correctly refused to recommend based on an out-of-catalogue title, matching the expected declined behavior. The refusal is fully supported by the tool evidence showing the title unresolved and no recommendations generated."
+      },
+      "actual": {
+        "declined": true,
+        "used_fallback": false,
+        "tools": [
+          "resolve_movie"
+        ],
+        "message": "Sorry, I can’t recommend something “like Dune Part Zero” because that title isn’t in the catalogue I can use.",
+        "metadata": {
+          "user_id": 7,
+          "taste_summary": null,
+          "movies_found": [],
+          "recommendations": [],
+          "peer_opinions": [],
+          "compare": [],
+          "unresolved_titles": [
+            "Dune Part Zero"
+          ],
+          "tool_trace": [
+            {
+              "tool": "resolve_movie",
+              "args": {
+                "title": "Dune Part Zero"
+              },
+              "ok": true
+            }
+          ]
+        }
+      },
+      "notes": "",
+      "query": "recommend something like Dune Part Zero",
+      "user_id": 7
+    },
+    {
+      "id": "G01",
+      "passed": true,
+      "expected": {
+        "declined": false,
+        "require_tools_all": [],
+        "require_tools_any": [
+          "find_similar_users",
+          "find_candidate_movies",
+          "collaborative_recommend",
+          "get_taste_summary"
+        ],
+        "require_recommendations": false,
+        "require_peer_opinion": false,
+        "require_movies_found": true,
+        "require_unresolved": false,
+        "expect_movies_contain": [],
+        "allow_no_agent": false,
+        "notes": "broader multi-lookup 1.2",
+        "judge_rubric": "Should recommend thrillers grounded in tool results / user taste."
+      },
+      "tool_eval": {
+        "passed": true,
+        "checks": {
+          "declined_ok": true,
+          "not_fallback": true,
+          "require_tools": true,
+          "require_any_tool": true,
+          "recommendations": true,
+          "peer_opinion": true,
+          "movies_found": true,
+          "unresolved": true,
+          "expect_movies_contain": true
+        },
+        "failures": [],
+        "tools_used": [
+          "get_taste_summary",
+          "collaborative_recommend"
+        ]
+      },
+      "output_judge": {
+        "passed": true,
+        "grounded_score": 5,
+        "task_fit_score": 5,
+        "rationale": "The response is grounded in the provided tool evidence: all five recommended films appear in collaborative_recommend/movies_found, and the taste summary supports the Thriller/Action rationale. No unsupported titles or stats were invented. It answers the user’s request appropriately."
+      },
+      "actual": {
+        "declined": false,
+        "used_fallback": false,
+        "tools": [
+          "get_taste_summary",
+          "collaborative_recommend"
+        ],
+        "message": "Similar users tend to like these **unseen thrillers** for you:\n\n1. **Inception (2010)** — Action, Crime, Drama, Mystery, Sci-Fi, Thriller  \n2. **Taxi Driver (1976)** — Crime, Drama, Thriller  \n3. **In Bruges (2008)** — Comedy, Crime, Drama, Thriller  \n4. **Children of Men (2006)** — Action, Adventure, Drama, Sci-Fi, Thriller  \n5. **Man on Fire (2004)** — Action, Crime, Drama, Mystery, Thriller  \n\nWhy these fit: your taste summary says you often rate **Thriller** highly, along with **Action** and **Adventure**. These picks all include **Thriller**, and several also overlap with your other frequent genres like **Action**. Similar users also rated them highly.\n\nIf you want, I can narrow this to the **darkest**, **most action-heavy**, or **best-rated** thrillers.",
+        "metadata": {
+          "user_id": 1,
+          "taste_summary": "Often rates highly: Comedy, Adventure, Romance, Action, Thriller. Recent high ratings include: Seven (a.k.a. Se7en) (1995); Usual Suspects, The (1995); Bottle Rocket (1996); Rob Roy (1995); Canadian Bacon (1995)",
+          "movies_found": [
+            {
+              "movie_id": 79132,
+              "title": "Inception (2010)",
+              "year": 2010,
+              "genres": [
+                "Action",
+                "Crime",
+                "Drama",
+                "Mystery",
+                "Sci-Fi",
+                "Thriller",
+                "IMAX"
+              ],
+              "plot_excerpt": "Former dream architect Dominick \"Dom\" Cobb  and business partner Arthur  perform corporate espionage by using an experimental military-developed machine to infiltrate the subconscious of their targets and extract information while dreaming, their latest target being powerful J...",
+              "catalogue_avg_rating": 4.066,
+              "catalogue_rating_count": 143
+            },
+            {
+              "movie_id": 111,
+              "title": "Taxi Driver (1976)",
+              "year": 1976,
+              "genres": [
+                "Crime",
+                "Drama",
+                "Thriller"
+              ],
+              "plot_excerpt": "Travis Bickle , an honorably discharged U.S. Marine, is a lonely and depressed man living in Manhattan, New York. He becomes a taxi driver in order to cope with chronic insomnia, driving passengers every night around the boroughs of New York City. He also spends time in seedy...",
+              "catalogue_avg_rating": 4.106,
+              "catalogue_rating_count": 104
+            },
+            {
+              "movie_id": 57669,
+              "title": "In Bruges (2008)",
+              "year": 2008,
+              "genres": [
+                "Comedy",
+                "Crime",
+                "Drama",
+                "Thriller"
+              ],
+              "plot_excerpt": "During his first job, rookie hitman Ray  accidentally kills a young boy. He and his senior colleague Ken  are sent to Bruges by their employer Harry Waters , and told to await further instructions. While Ken takes in the sights and historic medieval buildings, Ray is agitated...",
+              "catalogue_avg_rating": 4.159,
+              "catalogue_rating_count": 41
+            },
+            {
+              "movie_id": 48774,
+              "title": "Children of Men (2006)",
+              "year": 2006,
+              "genres": [
+                "Action",
+                "Adventure",
+                "Drama",
+                "Sci-Fi",
+                "Thriller"
+              ],
+              "plot_excerpt": "In 2027, after 18 years of worldwide female infertility, civilisation is on the brink of collapse as humanity faces the grim reality of extinction. For years the United Kingdom, one of the few stable nations with a functioning government, has been deluged by asylum seekers fro...",
+              "catalogue_avg_rating": 3.945,
+              "catalogue_rating_count": 64
+            },
+            {
+              "movie_id": 7445,
+              "title": "Man on Fire (2004)",
+              "year": 2004,
+              "genres": [
+                "Action",
+                "Crime",
+                "Drama",
+                "Mystery",
+                "Thriller"
+              ],
+              "plot_excerpt": "Because of the extremely high rate of kidnappings in Mexico City for ransom money, businessman Samuel Ramos  hires former Marine Force Recon officer and CIA operative John Creasy  to guard his nine-year-old daughter \"Pita\" . At first Creasy distances himself socially from Pita...",
+              "catalogue_avg_rating": 3.629,
+              "catalogue_rating_count": 35
+            }
+          ],
+          "recommendations": [
+            {
+              "movie_id": 79132,
+              "title": "Inception (2010)",
+              "year": 2010,
+              "genres": [
+                "Action",
+                "Crime",
+                "Drama",
+                "Mystery",
+                "Sci-Fi",
+                "Thriller",
+                "IMAX"
+              ],
+              "plot_excerpt": "Former dream architect Dominick \"Dom\" Cobb  and business partner Arthur  perform corporate espionage by using an experimental military-developed machine to infiltrate the subconscious of their targets and extract information while dreaming, their latest target being powerful J...",
+              "catalogue_avg_rating": 4.066,
+              "catalogue_rating_count": 143,
+              "score": 0.797,
+              "why": "catalogue quality ~3.98/5 (143 ratings); similar users ~4.55/5; matches your frequent genres"
+            },
+            {
+              "movie_id": 111,
+              "title": "Taxi Driver (1976)",
+              "year": 1976,
+              "genres": [
+                "Crime",
+                "Drama",
+                "Thriller"
+              ],
+              "plot_excerpt": "Travis Bickle , an honorably discharged U.S. Marine, is a lonely and depressed man living in Manhattan, New York. He becomes a taxi driver in order to cope with chronic insomnia, driving passengers every night around the boroughs of New York City. He also spends time in seedy...",
+              "catalogue_avg_rating": 4.106,
+              "catalogue_rating_count": 104,
+              "score": 0.789,
+              "why": "catalogue quality ~3.99/5 (104 ratings); similar users ~5.00/5; matches your frequent genres"
+            },
+            {
+              "movie_id": 57669,
+              "title": "In Bruges (2008)",
+              "year": 2008,
+              "genres": [
+                "Comedy",
+                "Crime",
+                "Drama",
+                "Thriller"
+              ],
+              "plot_excerpt": "During his first job, rookie hitman Ray  accidentally kills a young boy. He and his senior colleague Ken  are sent to Bruges by their employer Harry Waters , and told to await further instructions. While Ken takes in the sights and historic medieval buildings, Ray is agitated...",
+              "catalogue_avg_rating": 4.159,
+              "catalogue_rating_count": 41,
+              "score": 0.788,
+              "why": "catalogue quality ~3.91/5 (41 ratings); similar users ~4.75/5; matches your frequent genres"
+            },
+            {
+              "movie_id": 48774,
+              "title": "Children of Men (2006)",
+              "year": 2006,
+              "genres": [
+                "Action",
+                "Adventure",
+                "Drama",
+                "Sci-Fi",
+                "Thriller"
+              ],
+              "plot_excerpt": "In 2027, after 18 years of worldwide female infertility, civilisation is on the brink of collapse as humanity faces the grim reality of extinction. For years the United Kingdom, one of the few stable nations with a functioning government, has been deluged by asylum seekers fro...",
+              "catalogue_avg_rating": 3.945,
+              "catalogue_rating_count": 64,
+              "score": 0.787,
+              "why": "catalogue quality ~3.82/5 (64 ratings); similar users ~4.50/5; matches your frequent genres"
+            },
+            {
+              "movie_id": 7445,
+              "title": "Man on Fire (2004)",
+              "year": 2004,
+              "genres": [
+                "Action",
+                "Crime",
+                "Drama",
+                "Mystery",
+                "Thriller"
+              ],
+              "plot_excerpt": "Because of the extremely high rate of kidnappings in Mexico City for ransom money, businessman Samuel Ramos  hires former Marine Force Recon officer and CIA operative John Creasy  to guard his nine-year-old daughter \"Pita\" . At first Creasy distances himself socially from Pita...",
+              "catalogue_avg_rating": 3.629,
+              "catalogue_rating_count": 35,
+              "score": 0.783,
+              "why": "catalogue quality ~3.58/5 (35 ratings); similar users ~5.00/5; matches your frequent genres"
+            }
+          ],
+          "peer_opinions": [],
+          "compare": [],
+          "unresolved_titles": [],
+          "tool_trace": [
+            {
+              "tool": "get_taste_summary",
+              "args": {},
+              "ok": true
+            },
+            {
+              "tool": "collaborative_recommend",
+              "args": {
+                "k": 5,
+                "genres": [
+                  "Thriller"
+                ]
+              },
+              "ok": true
+            }
+          ]
+        }
+      },
+      "notes": "broader multi-lookup 1.2",
+      "query": "in thrillers I have not seen, what do similar users like?",
+      "user_id": 1
+    },
+    {
+      "id": "G02",
+      "passed": true,
+      "expected": {
+        "declined": false,
+        "require_tools_all": [
+          "resolve_movie"
+        ],
+        "require_tools_any": [
+          "get_taste_summary",
+          "get_movie_ratings_summary",
+          "find_similar_users"
+        ],
+        "require_recommendations": false,
+        "require_peer_opinion": false,
+        "require_movies_found": true,
+        "require_unresolved": false,
+        "expect_movies_contain": [
+          "Seven",
+          "Se7en"
+        ],
+        "allow_no_agent": false,
+        "notes": "explain / evidence lookup",
+        "judge_rubric": "Must explain Se7en/Seven using taste or peer evidence from tools; no invented facts."
+      },
+      "tool_eval": {
+        "passed": true,
+        "checks": {
+          "declined_ok": true,
+          "not_fallback": true,
+          "require_tools": true,
+          "require_any_tool": true,
+          "recommendations": true,
+          "peer_opinion": true,
+          "movies_found": true,
+          "unresolved": true,
+          "expect_movies_contain": true
+        },
+        "failures": [],
+        "tools_used": [
+          "resolve_movie",
+          "get_taste_summary"
+        ]
+      },
+      "output_judge": {
+        "passed": true,
+        "grounded_score": 5,
+        "task_fit_score": 5,
+        "rationale": "The assistant correctly resolved Se7en and used only tool-supported evidence: the movie’s genres and the user’s taste summary. It did not invent stats or unsupported peer opinions, and it answered the question by explaining why the user might like it based on history."
+      },
+      "actual": {
+        "declined": false,
+        "used_fallback": false,
+        "tools": [
+          "resolve_movie",
+          "get_taste_summary"
+        ],
+        "message": "You might like **Seven (a.k.a. Se7en) (1995)** because there’s some genre overlap with your history:\n\n- **Se7en** is tagged **Mystery, Thriller**\n- Your taste summary shows you often rate **Drama** highly, and you’ve also given high ratings to **The Shawshank Redemption**, **Forrest Gump**, and **Schindler’s List**\n\nThat said, the overlap is **not very strong** from the available history: I can see clear support for **Drama**, but not explicit evidence that you especially like **Mystery** or **Thriller**. Still, Se7en’s strong dramatic tone could fit your pattern.\n\nIf you want, I can also check how people with tastes similar to yours rated Se7en.",
+        "metadata": {
+          "user_id": 15,
+          "taste_summary": "Often rates highly: Sci-Fi, Action, Adventure, Drama, Comedy. Recent high ratings include: Star Wars: Episode IV - A New Hope (1977); Shawshank Redemption, The (1994); Forrest Gump (1994); Schindler's List (1993); Terminator 2: Judgment Day (1991)",
+          "movies_found": [
+            {
+              "movie_id": 47,
+              "title": "Seven (a.k.a. Se7en) (1995)",
+              "year": 1995,
+              "genres": [
+                "Mystery",
+                "Thriller"
+              ],
+              "plot_excerpt": "Littlefoot and his friends are constantly being bullied and browbeaten by three teenage dinosaurs: Hyp, a Hypsilophodon; Nod, a Nodosaurus; and Mutt, a Muttaburrasaurus. However, when a shower of flying rocks impacts near the Great Valley and causes a rock slide in the Mysteri...",
+              "catalogue_avg_rating": 3.975,
+              "catalogue_rating_count": 203
+            }
+          ],
+          "recommendations": [],
+          "peer_opinions": [],
+          "compare": [],
+          "unresolved_titles": [],
+          "tool_trace": [
+            {
+              "tool": "resolve_movie",
+              "args": {
+                "title": "Se7en"
+              },
+              "ok": true
+            },
+            {
+              "tool": "get_taste_summary",
+              "args": {},
+              "ok": true
+            }
+          ]
+        }
+      },
+      "notes": "explain / evidence lookup",
+      "query": "why might I like Se7en based on my history?",
+      "user_id": 15
+    }
+  ]
+}
